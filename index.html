@@ -23,7 +23,7 @@
     <h1 id="logo">Temp Header</h1>
   </header>
 
-  <main class="uk-flex">
+  <main class="uk-padding uk-flex-column">
 
     <!-- COUNTRY SEARCH -->
     <div class="uk-width-1-1 uk-flex-center uk-flex">
@@ -35,13 +35,29 @@
       </form>
     </div>
 
-    <section id="worldData" class="uk-flex">
+    
+      <section id="worldData" class="card uk-box-shadow-large uk-flex-column uk-text-center uk-padding-small uk-margin">
+        <div class="text-white">
+          <p class="uk-margin-small">Total Confirmed Cases</p>
+          <p class="uk-margin-small stat-number-large" id="totalCasesWorld">400,000</p>
+        </div>
+        <div class="uk-column-1-2">
+          <div class="text-green">
+            <p class="uk-margin-small">Recovered</p>
+            <p class="uk-margin-small stat-number-small" id="totalRecoveredWorld">100,000</p>
+          </div>
+          <div class="text-red">
+            <p class="uk-margin-small">Deaths</p>
+            <p class="uk-margin-small stat-number-small" id="totalDeathsWorld">25,000</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <section id="countryData" class="card uk-flex">
 
     </section>
-    <section id="countryData" class="uk-flex">
-
-    </section>
-    <section id="worldNews" class="uk-flex">
+    <section id="worldNews" class="card uk-flex">
 
     </section>
 
