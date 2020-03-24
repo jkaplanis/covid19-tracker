@@ -1,48 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Compressed CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/purecss@1.0.1/build/pure-min.css"
+      integrity="sha384-oAOxQR6DkCoMliIh8yFnu25d7Eq/PHS21PClpwjOTeU2jRSq11vu66rf90/cZr47"
+      crossorigin="anonymous"
+    />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- Compressed CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css"
-    integrity="sha384-oAOxQR6DkCoMliIh8yFnu25d7Eq/PHS21PClpwjOTeU2jRSq11vu66rf90/cZr47" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/purecss@1.0.1/build/grids-responsive-min.css"
+    />
+    <title>Document</title>
+  </head>
 
-  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/grids-responsive-min.css">
-  <title>Document</title>
-</head>
+  <body>
+    <div class="pure-g">
+      <header class="pure-u-1">
+        <h1 id="logo">Temp Header</h1>
+      </header>
+      <main class="pure-u-1">
+        <section class="pure-u-1">
+          <form id="searchForm" class="pure-u-1"></form>
+        </section>
+        <section id="worldData" class="pure-u-1">
+          <h5>Total Confirmed Cases</h5>
+          <h3>400,000</h3>
+          <div class="pure-g">
+            <div class="pure-u-1-2">
+              <p>Recovered</p>
+              <h6>100,000</h6>
+            </div>
+            <div class="pure-u-1-2">
+              <p>Deaths</p>
+              <h6>25,000</h6>
+            </div>
+          </div>
+        </section>
+        <section id="countryData" class="pure-u-1"></section>
+        <section id="worldNews" class="pure-u-1"></section>
+      </main>
+    </div>
 
-<body>
-  <div class="pure-g">
-    <header class="pure-u-1">
-      <h1 id="logo">Temp Header</h1>
-    </header>
-
-    <main>
-      <section class="pure-u-1">
-        <form id="searchForm" class="pure-u-1">
-
-        </form>
-      </section>
-      <section id="worldData" class="pure-u-1">
-
-      </section>
-      <section id="countryData" class="pure-u-1">
-
-      </section>
-      <section id="worldNews" class="pure-u-1">
-
-      </section>
-
-    </main>
-  </div>
-
-
-
-
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-  <script src="main.mjs" type="module"></script>
-</body>
-
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <script src="main.mjs" type="module"></script>
+  </body>
 </html>
