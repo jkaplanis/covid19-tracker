@@ -1,3 +1,29 @@
 body {
-  font-family: 'Baloo Thambi 2', cursive;
+  font-family: "Baloo Thambi 2", cursive;
+  background-color: #211b1b;
+  min-height: 100vh;
+}
+
+.card {
+  background-color: #494744;
+}
+
+.text-red {
+  color: #f84828;
+}
+
+.text-green {
+  color: #3db049;
+}
+
+.text-white {
+  color: whitesmoke;
+}
+
+.stat-number-large {
+  font-size: xx-large;
+}
+
+.stat-number-small {
+  font-size: large;
 }

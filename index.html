@@ -23,38 +23,41 @@
     <h1 id="logo">Temp Header</h1>
   </header>
 
-  <main>
-    <section class="uk-flex">
-      <form id="searchForm" class="uk-flex">
-        <label>
-          <i class="fas fa-search"></i>
-          <input type="text" placeholder="Country">
+  <main class="uk-padding uk-flex-column">
 
-          </input>
+    <!-- COUNTRY SEARCH -->
+    <div class="uk-width-1-1 uk-flex-center uk-flex">
+      <form id="searchForm" class="uk-width-medium">
+        <label class="uk-flex uk-flex-middle">
+          <i class="fas fa-search uk-margin-small-right"></i>
+          <input type="text" placeholder="Country" class="uk-input">
         </label>
-
       </form>
-    </section>
-    <section id="worldData" class="uk-flex uk-flex-column uk-text-center uk-margin-small uk-margin-small-left uk-margin-small-left">
-      <div>
-        <p class="uk-margin-small">Total Confirmed Cases</p>
-        <h5 class="uk-margin-small" id="totalCasesWorld">400,000</h5>
-      </div>
-      <div class="uk-column-1-2">
-        <div>
-          <p class="uk-margin-small">Recovered</p>
-          <h6 class="uk-margin-small" id="totalRecoveredWorld">100,000</h6>
+    </div>
+
+    
+      <section id="worldData" class="card uk-box-shadow-large uk-flex-column uk-text-center uk-padding-small uk-margin">
+        <div class="text-white">
+          <p class="uk-margin-small">Total Confirmed Cases</p>
+          <p class="uk-margin-small stat-number-large" id="totalCasesWorld">400,000</p>
         </div>
-        <div>
-          <p class="uk-margin-small">Deaths</p>
-          <h6 class="uk-margin-small" id="totalDeathsWorld">25,000</h6>
+        <div class="uk-column-1-2">
+          <div class="text-green">
+            <p class="uk-margin-small">Recovered</p>
+            <p class="uk-margin-small stat-number-small" id="totalRecoveredWorld">100,000</p>
+          </div>
+          <div class="text-red">
+            <p class="uk-margin-small">Deaths</p>
+            <p class="uk-margin-small stat-number-small" id="totalDeathsWorld">25,000</p>
+          </div>
         </div>
+
       </div>
     </section>
-    <section id="countryData" class="uk-flex">
+    <section id="countryData" class="card uk-flex">
 
     </section>
-    <section id="worldNews" class="uk-flex">
+    <section id="worldNews" class="card uk-flex">
 
     </section>
 
