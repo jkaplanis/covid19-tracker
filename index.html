@@ -4,15 +4,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- Compressed CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css"
-    integrity="sha384-oAOxQR6DkCoMliIh8yFnu25d7Eq/PHS21PClpwjOTeU2jRSq11vu66rf90/cZr47" crossorigin="anonymous">
 
   <!-- GOOGLE FONT BALOO THAMBI 2 -->
   <link href="https://fonts.googleapis.com/css?family=Baloo+Thambi+2&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./css/main.css">
-
-  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/grids-responsive-min.css">
 
   <!-- UIkit CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.3.7/dist/css/uikit.min.css" />
@@ -24,46 +19,46 @@
 </head>
 
 <body>
-  <div class="pure-g">
-    <header class="pure-u-1">
-      <h1 id="logo">Temp Header</h1>
-    </header>
+  <header class="uk-flex">
+    <h1 id="logo">Temp Header</h1>
+  </header>
 
-    <main class="pure-u-1">
-      <section class="pure-u-1">
-        <form id="searchForm" class="pure-u-1 pure-form">
-          <label>
-            <i class="fas fa-search"></i>
-            <input type="text" placeholder="Country">
+  <main>
+    <section class="uk-flex">
+      <form id="searchForm" class="uk-flex">
+        <label>
+          <i class="fas fa-search"></i>
+          <input type="text" placeholder="Country">
 
-            </input>
-          </label>
+          </input>
+        </label>
 
-        </form>
-      </section>
-      <section id="worldData" class="uk-text-center uk-align-center">
-        <h5>Total Confirmed Cases</h5>
-        <h3 id="totalConfirmedWorld">400,000</h3>
-        <div class="">
-          <div class="">
-            <p>Recovered</p>
-            <h6 id="totalRecoveredWorld">100,000</h6>
-          </div>
-          <div class="">
-            <p>Deaths</p>
-            <h6 id="totalDeathsWorld">25,000</h6>
-          </div>
+      </form>
+    </section>
+    <section id="worldData" class="uk-flex uk-flex-column uk-text-center uk-margin-small uk-margin-small-left uk-margin-small-left">
+      <div>
+        <p class="uk-margin-small">Total Confirmed Cases</p>
+        <h5 class="uk-margin-small" id="totalCasesWorld">400,000</h5>
+      </div>
+      <div class="uk-column-1-2">
+        <div>
+          <p class="uk-margin-small">Recovered</p>
+          <h6 class="uk-margin-small" id="totalRecoveredWorld">100,000</h6>
         </div>
-      </section>
-      <section id="countryData" class="pure-u-1">
+        <div>
+          <p class="uk-margin-small">Deaths</p>
+          <h6 class="uk-margin-small" id="totalDeathsWorld">25,000</h6>
+        </div>
+      </div>
+    </section>
+    <section id="countryData" class="uk-flex">
 
-      </section>
-      <section id="worldNews" class="pure-u-1">
+    </section>
+    <section id="worldNews" class="uk-flex">
 
-      </section>
+    </section>
 
-    </main>
-  </div>
+  </main>
 
 
 
