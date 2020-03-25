@@ -11945,4 +11945,8 @@ header nav > div {
   font-size: large;
 }
 
+.uk-button {
+  text-transform: none;
+}
+
 /*# sourceMappingURL=main.css.map */
