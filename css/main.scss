@@ -61,3 +61,30 @@ footer {
 .uk-button {
   text-transform: none;
 }
+
+// COUNTRY SEARCH INPUT
+.search-form-wrapper {
+  position: relative;
+
+  & label {
+    position: relative;
+  }
+
+  & #searchFormDropdown {
+    position: absolute;
+    width: 100%;
+    background: white;
+    max-height: 300px;
+    overflow-y: scroll;
+    top: 50px;
+
+    & ul {
+      margin-top: 10px;
+    }
+
+    & li {
+      list-style: none;
+      margin: 8px auto;
+    }
+  }
+}
