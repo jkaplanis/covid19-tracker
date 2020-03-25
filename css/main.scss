@@ -1,0 +1,39 @@
+$color-text-red: #f84828;
+$color-text-green: #3db049;
+$color-text-white: whitesmoke;
+$color-background: #211b1b;
+$color-background-card: #494744;
+
+@import "./scss/variables-theme.scss";
+@import "./scss/mixins-theme.scss";
+@import "./scss/uikit-theme.scss";
+
+body {
+  font-family: "Baloo Thambi 2", cursive;
+  background-color: $color-background;
+  min-height: 100vh;
+}
+
+.card {
+  background-color: $color-background-card;
+}
+
+.text-red {
+  color: $color-text-red;
+}
+
+.text-green {
+  color: $color-text-green;
+}
+
+.text-white {
+  color: $color-text-white;
+}
+
+.stat-number-large {
+  font-size: xx-large;
+}
+
+.stat-number-small {
+  font-size: large;
+}
