@@ -6,4 +6,8 @@ init()
 
 function init() {
 
+  getTrendingNews(5)
+    .then(articles => console.log(articles))
+    .catch(err => console.log(err))
+
 }
