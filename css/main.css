@@ -11915,10 +11915,17 @@ body {
   font-family: "Baloo Thambi 2", cursive;
   background-color: #211b1b;
   min-height: 100vh;
+  position: relative;
 }
 
 header {
   background: #0f0f0f;
+}
+
+footer {
+  background: #0f0f0f;
+  position: absolute;
+  bottom: 0;
 }
 
 .uk-navbar-container {
