@@ -21,18 +21,35 @@
 <body>
   <header class="uk-flex">
     <!-- HEADER -->
-    <nav class="uk-navbar uk-navbar-container uk-margin uk-width-1-1 uk-margin-remove-bottom">
-      <div class="uk-flex uk-width-1-1 uk-flex-between uk-flex-middle ">
-        <h2 id="logo" class="uk-margin-remove-bottom uk-margin-left text-white">COVID-19</h2>
 
-        <a class="uk-navbar-toggle" uk-navbar-toggle-icon href="#"></a>
+    
+    <nav class="uk-navbar-container uk-width-1-1 " uk-navbar>
+      <div class="uk-navbar-left">
+        <h2 id="logo" class="uk-margin-remove-bottom uk-margin-left text-white">COVID-19</h2>
+      </div>
+
+      <div class="uk-navbar-right">
+          <ul class="uk-navbar-nav">
+              <li>
+                  <!-- <a href="#">Parent</a> -->
+                  <a class="uk-navbar-toggle" uk-navbar-toggle-icon href="#"></a>
+                  <div class="uk-navbar-dropdown">
+                      <ul class="uk-nav uk-navbar-dropdown-nav">
+                          <li class="uk-nav-header">Navigation</li>
+                          <li ><a href="#">Home</a></li>
+                          <li class="uk-nav-header">Recent Searches</li>
+                          <li><a href="#">Country 1</a></li>
+                          <li><a href="#">Country 2</a></li>
+                          <li><a href="#">Country 3</a></li>
+                      </ul>
+                  </div>
+              </li>
+          </ul>
       </div>
     </nav>
   </header>
 
   <main class="uk-padding uk-flex-column">
-
-
 
     <!-- COUNTRY SEARCH -->
     <div class="uk-width-1-1 uk-flex-center uk-flex">
