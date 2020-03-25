@@ -15,8 +15,16 @@ body {
   min-height: 100vh;
 }
 
-header nav > div {
+header {
   background: $color-background-header;
+}
+
+.uk-navbar-container {
+  background: $color-background-header !important;
+}
+
+#logo {
+  white-space: nowrap;
 }
 
 .card {

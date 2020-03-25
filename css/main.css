@@ -11917,8 +11917,16 @@ body {
   min-height: 100vh;
 }
 
-header nav > div {
+header {
   background: #0f0f0f;
+}
+
+.uk-navbar-container {
+  background: #0f0f0f !important;
+}
+
+#logo {
+  white-space: nowrap;
 }
 
 .card {
