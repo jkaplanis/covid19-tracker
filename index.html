@@ -20,10 +20,19 @@
 
 <body>
   <header class="uk-flex">
-    <h1 id="logo">Temp Header</h1>
+    <!-- HEADER -->
+    <nav class="uk-navbar uk-navbar-container uk-margin uk-width-1-1 uk-margin-remove-bottom">
+      <div class="uk-flex uk-width-1-1 uk-flex-between uk-flex-middle ">
+        <h2 id="logo" class="uk-margin-remove-bottom uk-margin-left text-white">COVID-19</h2>
+
+        <a class="uk-navbar-toggle" uk-navbar-toggle-icon href="#"></a>
+      </div>
+    </nav>
   </header>
 
   <main class="uk-padding uk-flex-column">
+
+
 
     <!-- COUNTRY SEARCH -->
     <div class="uk-width-1-1 uk-flex-center uk-flex">
@@ -35,22 +44,22 @@
       </form>
     </div>
 
-    
-      <section id="worldData" class="card uk-box-shadow-large uk-flex-column uk-text-center uk-padding-small uk-margin">
-        <div class="text-white">
-          <p class="uk-margin-small">Total Confirmed Cases</p>
-          <p class="uk-margin-small stat-number-large" id="totalCasesWorld">400,000</p>
+
+    <section id="worldData" class="card uk-box-shadow-large uk-flex-column uk-text-center uk-padding-small uk-margin">
+      <div class="text-white">
+        <p class="uk-margin-small">Total Confirmed Cases</p>
+        <p class="uk-margin-small stat-number-large" id="totalCasesWorld">400,000</p>
+      </div>
+      <div class="uk-column-1-2">
+        <div class="text-green">
+          <p class="uk-margin-small">Recovered</p>
+          <p class="uk-margin-small stat-number-small" id="totalRecoveredWorld">100,000</p>
         </div>
-        <div class="uk-column-1-2">
-          <div class="text-green">
-            <p class="uk-margin-small">Recovered</p>
-            <p class="uk-margin-small stat-number-small" id="totalRecoveredWorld">100,000</p>
-          </div>
-          <div class="text-red">
-            <p class="uk-margin-small">Deaths</p>
-            <p class="uk-margin-small stat-number-small" id="totalDeathsWorld">25,000</p>
-          </div>
+        <div class="text-red">
+          <p class="uk-margin-small">Deaths</p>
+          <p class="uk-margin-small stat-number-small" id="totalDeathsWorld">25,000</p>
         </div>
+      </div>
 
       </div>
     </section>
