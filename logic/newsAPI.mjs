@@ -1,5 +1,5 @@
 const API_KEY = "8a2cb5f78b73457bb6bc5e1973895eb9";
-let QUERY_URL = `https://newsapi.org/v2/everything?q=COVID-19&apiKey=${API_KEY}&sortBy=popularity`;
+let QUERY_URL = `https://newsapi.org/v2/top-headlines?q=COVID-19&apiKey=${API_KEY}`;
 let REGION_QUERY_URL = `https://newsapi.org/v2/top-headlines?q=COVID-19&apiKey=${API_KEY}&country=`;
 
 /**
