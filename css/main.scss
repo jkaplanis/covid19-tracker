@@ -59,15 +59,25 @@ header {
 .search-form-wrapper {
   position: relative;
 
-  & form {
+  & label {
     position: relative;
   }
 
-  & #search-form-dropdown {
+  & #searchFormDropdown {
     position: absolute;
     width: 100%;
-    height: 2px;
-    background: red;
-    bottom: -100px;
+    background: white;
+    max-height: 300px;
+    overflow-y: scroll;
+    top: 50px;
+
+    & ul {
+      margin-top: 10px;
+    }
+
+    & li {
+      list-style: none;
+      margin: 8px auto;
+    }
   }
 }
