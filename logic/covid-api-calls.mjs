@@ -1,11 +1,22 @@
+let SUMMARY_QUERY_URL = "https://api.covid19api.com/summary";
+
 /**
  * @param {num} numOfCountries number of countries to return
  * @returns {obj}
  * returns n number of top countries affected by COIVD-19
  */
-export function getTopCountryData(numOfCountries) {
-  console.log("GETTING TOP COUNTRY DATA");
-  // use _determinTopTenCountries()
+export async function getTopCountryData(numOfCountries) {
+  if (numOfCountries) {
+    const response = await $.ajax({
+      url: SUMMARY_QUERY_URL,
+      method: "GET"
+    });
+
+    response.Countries.sort(_sortCountries);
+    return response.Countries.slice(0, numOfCountries);
+  } else {
+    throw new Error("Must pass a number for number of countries");
+  }
 }
 
 /**
@@ -18,6 +29,15 @@ export function getSpecificCountryData(country) {
 }
 
 // INTERNAL LOGIC
-function _getTopNumCountries() {
+function _sortCountries(firstCountry, secondCountry) {
+  var first = parseInt(firstCountry.TotalConfirmed);
+  var second = parseInt(secondCountry.TotalConfirmed);
   // logic for determining top countries
+  if (first > second) {
+    return -1;
+  } else if (first < second) {
+    return 1;
+  } else {
+    return 0;
+  }
 }
