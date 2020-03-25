@@ -11957,4 +11957,26 @@ header {
   text-transform: none;
 }
 
+.search-form-wrapper {
+  position: relative;
+}
+.search-form-wrapper label {
+  position: relative;
+}
+.search-form-wrapper #searchFormDropdown {
+  position: absolute;
+  width: 100%;
+  background: white;
+  max-height: 300px;
+  overflow-y: scroll;
+  top: 50px;
+}
+.search-form-wrapper #searchFormDropdown ul {
+  margin-top: 10px;
+}
+.search-form-wrapper #searchFormDropdown li {
+  list-style: none;
+  margin: 8px auto;
+}
+
 /*# sourceMappingURL=main.css.map */
