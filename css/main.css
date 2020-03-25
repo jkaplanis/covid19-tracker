@@ -11917,6 +11917,10 @@ body {
   min-height: 100vh;
 }
 
+header nav > div {
+  background: #0f0f0f;
+}
+
 .card {
   background-color: #494744;
 }
