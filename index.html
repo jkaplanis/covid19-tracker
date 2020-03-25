@@ -1,110 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- GOOGLE FONT BALOO THAMBI 2 -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Baloo+Thambi+2&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/main.css" />
 
-  <!-- GOOGLE FONT BALOO THAMBI 2 -->
-  <link href="https://fonts.googleapis.com/css?family=Baloo+Thambi+2&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./css/main.css">
-
-  <!-- UIkit CSS
+    <!-- UIkit CSS
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.3.7/dist/css/uikit.min.css" /> -->
 
-  <!-- UIkit JS -->
-  <script src="https://cdn.jsdelivr.net/npm/uikit@3.3.7/dist/js/uikit.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/uikit@3.3.7/dist/js/uikit-icons.min.js"></script>
-  <title>COVID-19 Tracker</title>
-</head>
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.3.7/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.3.7/dist/js/uikit-icons.min.js"></script>
+    <title>COVID-19 Tracker</title>
+  </head>
 
-<body>
-  <header class="uk-flex">
-    <!-- HEADER -->
+  <body>
+    <header class="uk-flex">
+      <!-- HEADER -->
 
-    
-    <nav class="uk-navbar-container uk-width-1-1 " uk-navbar>
-      <div class="uk-navbar-left">
-        <h2 id="logo" class="uk-margin-remove-bottom uk-margin-left text-white">COVID-19</h2>
-      </div>
+      <nav class="uk-navbar-container uk-width-1-1 " uk-navbar>
+        <div class="uk-navbar-left">
+          <h2
+            id="logo"
+            class="uk-margin-remove-bottom uk-margin-left text-white"
+          >
+            COVID-19
+          </h2>
+        </div>
 
-      <div class="uk-navbar-right">
+        <div class="uk-navbar-right">
           <ul class="uk-navbar-nav">
-              <li>
-                  <!-- <a href="#">Parent</a> -->
-                  <a class="uk-navbar-toggle" uk-navbar-toggle-icon href="#"></a>
-                  <div class="uk-navbar-dropdown">
-                      <ul class="uk-nav uk-navbar-dropdown-nav">
-                          <li class="uk-nav-header">Navigation</li>
-                          <li ><a href="#">Home</a></li>
-                          <li class="uk-nav-header">Recent Searches</li>
-                          <li><a href="#">Country 1</a></li>
-                          <li><a href="#">Country 2</a></li>
-                          <li><a href="#">Country 3</a></li>
-                      </ul>
-                  </div>
-              </li>
+            <li>
+              <!-- <a href="#">Parent</a> -->
+              <a class="uk-navbar-toggle" uk-navbar-toggle-icon href="#"></a>
+              <div class="uk-navbar-dropdown">
+                <ul class="uk-nav uk-navbar-dropdown-nav">
+                  <li class="uk-nav-header">Navigation</li>
+                  <li><a href="#">Home</a></li>
+                  <li class="uk-nav-header">Recent Searches</li>
+                  <li><a href="#">Country 1</a></li>
+                  <li><a href="#">Country 2</a></li>
+                  <li><a href="#">Country 3</a></li>
+                </ul>
+              </div>
+            </li>
           </ul>
-      </div>
-    </nav>
-  </header>
-
-  <main class="uk-padding uk-flex-column">
-
-    <!-- COUNTRY SEARCH -->
-    <div class="uk-width-1-1 uk-flex-center uk-flex search-form-wrapper">
-      
-      <form id="searchForm" class="uk-width-medium">
-        <div id="search-form-dropdown">
-          <div>Option 1</div>
         </div>
-        <label class="uk-flex uk-flex-middle">
-          <i class="fas fa-search uk-margin-small-right"></i>
-          <input type="text" placeholder="Country" class="uk-input">
-        </label>
-      </form>
-    </div>
+      </nav>
+    </header>
 
-
-    <section id="worldData" class="card uk-box-shadow-large uk-flex-column uk-text-center uk-padding-small uk-margin">
-      <div class="text-white">
-        <p class="uk-margin-small">Total Confirmed Cases</p>
-        <p class="uk-margin-small stat-number-large" id="totalCasesWorld">400,000</p>
+    <main class="uk-padding uk-flex-column">
+      <!-- COUNTRY SEARCH -->
+      <div class="uk-width-1-1 uk-flex-center uk-flex">
+        <form id="searchForm" class="uk-width-medium">
+          <label class="uk-flex uk-flex-middle">
+            <i class="fas fa-search uk-margin-small-right"></i>
+            <input type="text" placeholder="Country" class="uk-input" />
+          </label>
+        </form>
       </div>
-      <div class="uk-column-1-2">
-        <div class="text-green">
-          <p class="uk-margin-small">Recovered</p>
-          <p class="uk-margin-small stat-number-small" id="totalRecoveredWorld">100,000</p>
+
+      <section
+        id="worldData"
+        class="card uk-box-shadow-large uk-flex-column uk-text-center uk-padding-small uk-margin"
+      >
+        <div class="text-white">
+          <p class="uk-margin-small">Total Confirmed Cases</p>
+          <p class="uk-margin-small stat-number-large" id="totalCasesWorld">
+            400,000
+          </p>
         </div>
-        <div class="text-red">
-          <p class="uk-margin-small">Deaths</p>
-          <p class="uk-margin-small stat-number-small" id="totalDeathsWorld">25,000</p>
+        <div class="uk-column-1-2">
+          <div class="text-green">
+            <p class="uk-margin-small">Recovered</p>
+            <p
+              class="uk-margin-small stat-number-small"
+              id="totalRecoveredWorld"
+            >
+              100,000
+            </p>
+          </div>
+          <div class="text-red">
+            <p class="uk-margin-small">Deaths</p>
+            <p class="uk-margin-small stat-number-small" id="totalDeathsWorld">
+              25,000
+            </p>
+          </div>
         </div>
-      </div>
+      </section>
+      <section
+        class="card uk-flex-column uk-box-shadow-larges uk-padding-small uk-margin text-white"
+      >
+        <h3 class="uk-text-center uk-text-muted">Top 10 Countries</h3>
+        <!-- these a links will be removed later when they are dynamically created -->
+        <div id="countryListData"></div>
+      </section>
+      <!-- Trending world news -->
+      <section
+        id="worldNews"
+        class="card uk-flex-column uk-box-shadow-larges uk-padding-small uk-margin text-white"
+      >
+        <h3 class="uk-text-center uk-text-muted">Trending News</h3>
 
-      </div>
-    </section>
-    <section class="card uk-flex-column uk-box-shadow-larges uk-padding-small uk-margin text-white">
-      <h3 class="uk-text-center uk-text-muted">Top 10 Countries</h3>
-      <!-- these a links will be removed later when they are dynamically created -->
-      <div id="countryListData">
-      </div>
-    </section>
-    <section id="worldNews" class="card uk-flex">
+        <div class="uk-flex">
+          <!-- placeholder for image to be added in future version -->
+          <!-- <img
+            class="uk-float-left"
+            src="https://via.placeholder.com/75"
+            alt=""
+          /> -->
+          <ul class="uk-list uk-margin-left uk-margin-remove-bottom">
+            <li class="uk-margin-remove">Title: article 1</li>
+            <li class="uk-margin-remove">Date:</li>
+            <li class="uk-margin-remove">Source: <a href="#">NYT (link)</a></li>
+            <li class="uk-margin-remove">
+              Description: Lorem ipsum dolor sit amet, consectetur adipisicing
+              elit. Eius dolores corrupti possimus perferendis...
+            </li>
+          </ul>
+        </div>
+        <hr class="uk-divider-small" />
+        <div class="uk-flex">
+          <!-- placeholder for image to be added in future version -->
+          <!-- <img
+            class="uk-float-left"
+            src="https://via.placeholder.com/75"
+            alt=""
+          /> -->
+          <ul class="uk-list uk-margin-left uk-margin-remove-bottom">
+            <li class="uk-margin-remove">Title: article 1</li>
+            <li class="uk-margin-remove">Date:</li>
+            <li class="uk-margin-remove">Source: <a href="#">NYT (link)</a></li>
+            <li class="uk-margin-remove">
+              Description: Lorem ipsum dolor sit amet, consectetur adipisicing
+              elit. Eius dolores corrupti possimus perferendis...
+            </li>
+          </ul>
+        </div>
+        <hr class="uk-divider-small" />
+        <div class="uk-flex">
+          <!-- placeholder for image to be added in future version -->
+          <!-- <img
+            class="uk-float-left"
+            src="https://via.placeholder.com/75"
+            alt=""
+          /> -->
+          <ul class="uk-list uk-margin-left uk-margin-remove-bottom">
+            <li class="uk-margin-remove">Title: article 1</li>
+            <li class="uk-margin-remove">Date:</li>
+            <li class="uk-margin-remove">Source: <a href="#">NYT (link)</a></li>
+            <li class="uk-margin-remove">
+              Description: Lorem ipsum dolor sit amet, consectetur adipisicing
+              elit. Eius dolores corrupti possimus perferendis...
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
 
-    </section>
+    <!-- FOR FONT AWSOME -->
+    <script
+      src="https://kit.fontawesome.com/029529849f.js"
+      crossorigin="anonymous"
+    ></script>
 
-  </main>
-
-
-
-
-  <!-- FOR FONT AWSOME -->
-  <script src="https://kit.fontawesome.com/029529849f.js" crossorigin="anonymous"></script>
-
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-  <script src="main.mjs" type="module"></script>
-</body>
-
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <script src="main.mjs" type="module"></script>
+  </body>
 </html>
