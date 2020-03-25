@@ -54,3 +54,20 @@ header {
 .uk-button {
   text-transform: none;
 }
+
+// COUNTRY SEARCH INPUT
+.search-form-wrapper {
+  position: relative;
+
+  & form {
+    position: relative;
+  }
+
+  & #search-form-dropdown {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: red;
+    bottom: -100px;
+  }
+}
