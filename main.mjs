@@ -6,8 +6,10 @@ init()
 
 function init() {
 
-  getTrendingNews(5)
-    .then(articles => console.log(articles))
-    .catch(err => console.log(err))
+  // THIS CALL IS USED FOR GETTING A CERTAIN NUMBER OF TRENDING NEWS ARTICLES 
+  // RELATED TO COVID-19
+  // getTrendingNews(5)
+  //   .then(articles => console.log(articles))
+  //   .catch(err => console.log(err))
 
 }
