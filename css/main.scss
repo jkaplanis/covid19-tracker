@@ -9,8 +9,12 @@ $color-background-header: #0f0f0f;
 @import "./scss/mixins-theme.scss";
 @import "./scss/uikit-theme.scss";
 
+*,
+h3 {
+  font-family: "Inconsolata", monospace;
+}
+
 body {
-  font-family: "Baloo Thambi 2", cursive;
   background-color: $color-background;
   min-height: 100vh;
   position: relative;
@@ -28,10 +32,6 @@ footer {
 
 .uk-navbar-container {
   background: $color-background-header !important;
-}
-
-#logo {
-  white-space: nowrap;
 }
 
 .card {
@@ -60,6 +60,7 @@ footer {
 
 .uk-button {
   text-transform: none;
+  line-height: normal;
 }
 
 // COUNTRY SEARCH INPUT

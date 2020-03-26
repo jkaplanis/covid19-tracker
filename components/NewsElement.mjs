@@ -13,10 +13,10 @@ export default function buildNewsElements(articles) {
     ulEl.attr("class", "uk-list uk-margin-left uk-margin-remove-bottom");
 
     var liTitle = $("<li>");
-    liTitle.text("Title: " + article.title);
+    liTitle.append($("<strong>").text(article.title));
 
     var liDate = $("<li>");
-    liDate.text("Date: " + article.publishedAt);
+    liDate.text(moment(article.publishedAt).format("LL"));
 
     var sourceLink = $("<a>");
     sourceLink.attr("href", article.url);
@@ -24,11 +24,10 @@ export default function buildNewsElements(articles) {
     sourceLink.text(article.source.name);
 
     var liSource = $("<li>");
-    liSource.text("Source: ");
     liSource.append(sourceLink);
 
     var liDescription = $("<li>");
-    liDescription.text("Description: " + article.description);
+    liDescription.text(article.description);
 
     ulEl.append(liTitle, liDate, liSource, liDescription);
     divEl.append(ulEl);

@@ -1,7 +1,8 @@
 export const countries = [
   {
     country: " Azerbaijan",
-    slug: "-azerbaijan"
+    slug: "-azerbaijan",
+    code: "AZ"
   },
   {
     country: "Afghanistan",
@@ -70,7 +71,8 @@ export const countries = [
   },
   {
     country: "Bahamas, The",
-    slug: "bahamas-the"
+    slug: "bahamas-the",
+    code: "BS"
   },
   {
     country: "Bahrain",
@@ -144,7 +146,8 @@ export const countries = [
   },
   {
     country: "Cabo Verde",
-    slug: "cabo-verde"
+    slug: "cabo-verde",
+    code: "CV"
   },
   {
     country: "Cambodia",
@@ -202,11 +205,13 @@ export const countries = [
   },
   {
     country: "Congo (Brazzaville)",
-    slug: "congo-(brazzaville)"
+    slug: "congo-(brazzaville)",
+    code: "CG"
   },
   {
     country: "Congo (Kinshasa)",
-    slug: "congo-(kinshasa)"
+    slug: "congo-(kinshasa)",
+    code: "CG"
   },
   {
     country: "Costa Rica",
@@ -215,7 +220,8 @@ export const countries = [
   },
   {
     country: "Cote d'Ivoire",
-    slug: "cote-divoire"
+    slug: "cote-divoire",
+    code: "CI"
   },
   {
     country: "Croatia",
@@ -248,7 +254,8 @@ export const countries = [
   },
   {
     country: "Czechia",
-    slug: "czechia"
+    slug: "czechia",
+    code: "CZ"
   },
   {
     country: "Denmark",
@@ -307,7 +314,8 @@ export const countries = [
   },
   {
     country: "Eswatini",
-    slug: "eswatini"
+    slug: "eswatini",
+    code: "SZ"
   },
   {
     country: "Ethiopia",
@@ -351,7 +359,8 @@ export const countries = [
   },
   {
     country: "Gambia, The",
-    slug: "gambia-the"
+    slug: "gambia-the",
+    code: "GM"
   },
   {
     country: "Georgia",
@@ -425,7 +434,8 @@ export const countries = [
   },
   {
     country: "Holy See",
-    slug: "holy-see"
+    slug: "holy-see",
+    code: "VA"
   },
   {
     country: "Honduras",
@@ -439,7 +449,8 @@ export const countries = [
   },
   {
     country: "Hong Kong SAR",
-    slug: "hong-kong-sar"
+    slug: "hong-kong-sar",
+    code: "HK"
   },
   {
     country: "Hungary",
@@ -468,7 +479,8 @@ export const countries = [
   },
   {
     country: "Iran (Islamic Republic of)",
-    slug: "iran-(islamic-republic-of)"
+    slug: "iran-(islamic-republic-of)",
+    code: "IR"
   },
   {
     country: "Iraq",
@@ -577,11 +589,13 @@ export const countries = [
   },
   {
     country: "Macao SAR",
-    slug: "macao-sar"
+    slug: "macao-sar",
+    code: "MO"
   },
   {
     country: "Macau",
-    slug: "macau"
+    slug: "macau",
+    code: "MO"
   },
   {
     country: "Madagascar",
@@ -590,7 +604,8 @@ export const countries = [
   },
   {
     country: "Mainland China",
-    slug: "mainland-china"
+    slug: "mainland-china",
+    code: "CN"
   },
   {
     country: "Malaysia",
@@ -699,11 +714,13 @@ export const countries = [
   },
   {
     country: "North Ireland",
-    slug: "north-ireland"
+    slug: "north-ireland",
+    code: "GB"
   },
   {
     country: "North Macedonia",
-    slug: "north-macedonia"
+    slug: "north-macedonia",
+    code: "MK"
   },
   {
     country: "Norway",
@@ -712,7 +729,8 @@ export const countries = [
   },
   {
     country: "occupied Palestinian territory",
-    slug: "occupied-palestinian-territory"
+    slug: "occupied-palestinian-territory",
+    code: "PS"
   },
   {
     country: "Oman",
@@ -730,7 +748,8 @@ export const countries = [
   },
   {
     country: "Palestine",
-    slug: "palestine"
+    slug: "palestine",
+    code: "PS"
   },
   {
     country: "Panama",
@@ -779,15 +798,18 @@ export const countries = [
   },
   {
     country: "Republic of Ireland",
-    slug: "republic-of-ireland"
+    slug: "republic-of-ireland",
+    code: "IE"
   },
   {
     country: "Republic of Korea",
-    slug: "republic-of-korea"
+    slug: "republic-of-korea",
+    code: "KR"
   },
   {
     country: "Republic of Moldova",
-    slug: "republic-of-moldova"
+    slug: "republic-of-moldova",
+    code: "MD"
   },
   {
     country: "Republic of the Congo",
@@ -811,7 +833,8 @@ export const countries = [
   },
   {
     country: "Russian Federation",
-    slug: "russian-federation"
+    slug: "russian-federation",
+    code: "RU"
   },
   {
     country: "Rwanda",
@@ -905,7 +928,8 @@ export const countries = [
   },
   {
     country: "St. Martin",
-    slug: "st.-martin"
+    slug: "st.-martin",
+    code: "MF"
   },
   {
     country: "Sudan",
@@ -934,7 +958,8 @@ export const countries = [
   },
   {
     country: "Taipei and environs",
-    slug: "taipei-and-environs"
+    slug: "taipei-and-environs",
+    code: "TW"
   },
   {
     country: "Taiwan",
@@ -943,7 +968,8 @@ export const countries = [
   },
   {
     country: "Taiwan*",
-    slug: "taiwan"
+    slug: "taiwan",
+    code: "TW"
   },
   {
     country: "Tanzania",
@@ -957,15 +983,18 @@ export const countries = [
   },
   {
     country: "The Bahamas",
-    slug: "the-bahamas"
+    slug: "the-bahamas",
+    code: "BS"
   },
   {
     country: "The Gambia",
-    slug: "the-gambia"
+    slug: "the-gambia",
+    code: "GM"
   },
   {
     country: "Timor-Leste",
-    slug: "timor-leste"
+    slug: "timor-leste",
+    code: "TL"
   },
   {
     country: "Togo",
@@ -994,7 +1023,8 @@ export const countries = [
   },
   {
     country: "UK",
-    slug: "uk"
+    slug: "uk",
+    code: "GB"
   },
   {
     country: "Ukraine",
@@ -1028,7 +1058,8 @@ export const countries = [
   },
   {
     country: "Vatican City",
-    slug: "vatican-city"
+    slug: "vatican-city",
+    code: "VA"
   },
   {
     country: "Venezuela",
@@ -1037,7 +1068,8 @@ export const countries = [
   },
   {
     country: "Viet Nam",
-    slug: "viet-nam"
+    slug: "viet-nam",
+    code: "VN"
   },
   {
     country: "Vietnam",
