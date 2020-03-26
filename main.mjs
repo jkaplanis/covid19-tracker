@@ -23,7 +23,12 @@ function init() {
   renderWorldData();
   renderTopCountryList();
   // renderTrendingNewsList();
-  setUpEventListeners();
+
+  // Use this function to setup any global event listeners
+  // setUpEventListeners();
+
+  // Country search input specific event listener setup
+  countryInputEventListenerInitialization();
 }
 
 function renderWorldData() {
@@ -116,10 +121,20 @@ function renderTrendingNewsList() {
 }
 
 function setUpEventListeners() {
+  // Global event listeners go here
+}
+
+function countryInputEventListenerInitialization() {
+  // ALL THE COUNTRY INPUT EVENT LISTENERS SHOULD BE IN THEIR OWN FUNCTION - FUTURE FIX
+  // Country search on key up listener
   $("#searchForm input").on("keyup", countrySearchInputHandler);
+  // Country search dropdown on blur listener
   $("#searchForm input").on("blur", hideCountryListHandler);
+  // Country search on focus listener
   $("#searchForm input").on("focus", showCountryListHandler);
+  // Country search dropdown item click listener
   $("#searchFormDropdown").click(countryClickedHandler);
+  // Country search input submit listener
 }
 
 function countrySearchInputHandler(event) {
