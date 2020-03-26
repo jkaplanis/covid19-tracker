@@ -12,6 +12,7 @@ $(init);
 function init() {
   var urlParams = new URLSearchParams(window.location.search);
   let countryCode = urlParams.get("countryCode");
+
   getRegionNews(countryCode, 5)
     .then(function(data) {
       $("world-news").append(NewsElement(data));
@@ -19,6 +20,7 @@ function init() {
     .catch(function(err) {
       console.log(err);
     });
+
   renderSpecificCountryData(countryCode);
 }
 
