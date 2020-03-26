@@ -12,7 +12,7 @@ import {
 import NewsElement from "./components/NewsElement.mjs";
 
 // Start the app logic
-$(init());
+$(init);
 
 function init() {
   // THIS CALL IS USED FOR GETTING A CERTAIN NUMBER OF TRENDING NEWS ARTICLES
