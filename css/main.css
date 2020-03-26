@@ -11911,8 +11911,11 @@ h3 {
     page-break-after: avoid;
   }
 }
+* {
+  font-family: "Inconsolata", monospace !important;
+}
+
 body {
-  font-family: "Baloo Thambi 2", cursive;
   background-color: #211b1b;
   min-height: 100vh;
   position: relative;
@@ -11958,6 +11961,7 @@ footer {
 
 .uk-button {
   text-transform: none;
+  line-height: normal;
 }
 
 .search-form-wrapper {

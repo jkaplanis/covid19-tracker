@@ -22,7 +22,7 @@ function init() {
 
   renderWorldData();
   renderTopCountryList();
-  renderTrendingNewsList();
+  // renderTrendingNewsList();
 
   // Use this function to setup any global event listeners
   // setUpEventListeners();
@@ -55,11 +55,14 @@ function renderTopCountryList() {
         btnLink.attr("href", "#");
         btnLink.attr(
           "class",
-          "uk-button uk-width-1-1 uk-column-1-2 stat-number-small"
+          "uk-button uk-width-1-1 uk-column-1-2 stat-number-small uk-padding-remove uk-margin-small"
         );
 
         var countryName = $("<p>");
-        countryName.attr("class", "uk-margin-remove uk-text-right");
+        countryName.attr(
+          "class",
+          "uk-margin-remove uk-text-right uk-text-break"
+        );
         countryName.text(country.Country);
 
         var totalCases = $("<p>");
