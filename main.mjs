@@ -79,7 +79,6 @@ function renderTopCountryList() {
 function renderTrendingNewsList() {
   getTrendingNews(5)
     .then(function(articles) {
-      console.log(articles);
       $("#world-news").empty();
 
       articles.forEach(function(article, index) {
@@ -199,27 +198,43 @@ function showCountryListHandler() {
 }
 
 function navigateToCountryPage(event) {
+  let countryCode = $(event.target).attr("data-country-code");
+
+  addSearchToLocalStorage(
+    countries.filter(obj => {
+      obj.code === countryCode.toUpperCase();
+    })[0]
+  );
+
   // Update this string to pass the country code to the country specific page
-  window.location.href = `country.html?countryCode=${$(event.target).attr(
-    "data-country-code"
-  )}`;
+  window.location.href = `country.html?countryCode=${countryCode}`;
 }
 
 function navigateToCountryPageOnSubmit(event) {
-  let inputValue = $(".uk-input")
-    .val()
-    .toLowerCase();
-  let filteredCountry = countries.filter(function(obj) {
-    let countryName = obj.country ? obj.country.toLowerCase() : null;
-    let countryCode = obj.code ? obj.country.toLowerCase() : null;
-    if (inputValue === countryName || inputValue === countryCode) {
-      return true;
-    } else {
-      return false;
-    }
-  })[0];
+  let inputValue = $(".uk-input").val();
 
-  if (filteredCountry) {
-    window.location.href = `country.html?countryCode=${filteredCountry.code}`;
+  let returnedCountryData = countrySearchByName(inputValue);
+
+  if (returnedCountryData) {
+    addSearchToLocalStorage(returnedCountryData);
+    window.location.href = `country.html?countryCode=${returnedCountryData.code}`;
+  }
+}
+
+function addSearchToLocalStorage(countryObj) {
+  let pastSearches = localStorage.getItem("covid-app");
+  if (pastSearches) {
+    pastSearches = JSON.parse(pastSearches);
+  } else {
+    pastSearches = [];
+  }
+
+  let alreadyContainsCountry = pastSearches.filter(obj => {
+    return obj.country.toLowerCase() === countryObj.country.toLowerCase();
+  });
+
+  if (alreadyContainsCountry.length === 0) {
+    pastSearches.push(countryObj);
+    localStorage.setItem("covid-app", JSON.stringify(pastSearches));
   }
 }
