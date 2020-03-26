@@ -1060,7 +1060,7 @@ export function countrySearchByCode(code) {
   var returnedCountryObj = null;
 
   countries.forEach(function(obj) {
-    if (codeFormatted === obj.code.toLowerCase()) {
+    if (obj.code && codeFormatted === obj.code.toLowerCase()) {
       returnedCountryObj = obj;
     }
   });

@@ -30,6 +30,7 @@ function init() {
 
   // Country search input specific event listener setup
   countryInputEventListenerInitialization();
+  setUpEventListeners();
 }
 
 function renderWorldData() {
@@ -89,13 +90,16 @@ function renderTrendingNewsList() {
 }
 
 function setUpEventListeners() {
+  $("body").on("click", function() {
+    if (event.target === $("#searchFormDropdown")) console.log("click", event);
+  });
   // Global event listeners go here
 }
 
 function countryInputEventListenerInitialization() {
   let searchFormEl = $("#searchForm");
   let searchFormInputEl = $("#searchForm input");
-  let searchFormDropdown = $("#searcjFormDropdown");
+  let searchFormDropdown = $("#searchFormDropdown");
 
   // ALL THE COUNTRY INPUT EVENT LISTENERS SHOULD BE IN THEIR OWN FUNCTION - FUTURE FIX
   // Country search on key up listener
@@ -138,7 +142,7 @@ function buildCountrySearchDropdown(countryArray) {
   let elements = countryArray.map(function(obj) {
     let countryLiEl = $("<li>");
     let linkEl = $("<a>");
-    linkEl.attr("href", "#");
+    linkEl.attr("href", `/country.html?countryCode=${obj.code}`);
     linkEl.attr("data-country-code", obj.code);
     linkEl.text(obj.country);
     linkEl.on("mousedown", navigateToCountryPage);
@@ -168,15 +172,13 @@ function showCountryListHandler() {
 
 function navigateToCountryPage(event) {
   let countryCode = $(event.target).attr("data-country-code");
+  console.log(countryCode);
+  let countryObj = countrySearchByCode(countryCode);
+  console.log(countryObj);
 
-  addSearchToLocalStorage(
-    countries.filter(obj => {
-      obj.code === countryCode.toUpperCase();
-    })[0]
-  );
-
-  // Update this string to pass the country code to the country specific page
-  window.location.href = `country.html?countryCode=${countryCode}`;
+  if (countryObj) {
+    addSearchToLocalStorage(countryObj);
+  }
 }
 
 function navigateToCountryPageOnSubmit(event) {
