@@ -125,16 +125,23 @@ function setUpEventListeners() {
 }
 
 function countryInputEventListenerInitialization() {
+  let searchFormEl = $("#searchForm");
+  let searchFormInputEl = $("#searchForm input");
+  let searchFormDropdown = $("#searcjFormDropdown");
+
   // ALL THE COUNTRY INPUT EVENT LISTENERS SHOULD BE IN THEIR OWN FUNCTION - FUTURE FIX
   // Country search on key up listener
-  $("#searchForm input").on("keyup", countrySearchInputHandler);
+  searchFormInputEl.on("keyup", countrySearchInputHandler);
   // Country search dropdown on blur listener
-  $("#searchForm input").on("blur", hideCountryListHandler);
+  // searchFormInputEl.on("blur", hideCountryListHandler);
   // Country search on focus listener
-  $("#searchForm input").on("focus", showCountryListHandler);
+  searchFormInputEl.on("focus", showCountryListHandler);
   // Country search dropdown item click listener
-  $("#searchFormDropdown").click(countryClickedHandler);
+  // $("#searchFormDropdown").click(countryClickedHandler);
   // Country search input submit listener
+  searchFormEl.on("submit", function(event) {
+    event.preventDefault();
+  });
 }
 
 function countrySearchInputHandler(event) {
