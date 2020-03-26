@@ -9,6 +9,7 @@ import {
   countrySearchByName,
   countries
 } from "./data/countries.mjs";
+import NewsElement from "./components/NewsElement.mjs";
 
 // Start the app logic
 $(init());
@@ -78,42 +79,10 @@ function renderTopCountryList() {
 
 function renderTrendingNewsList() {
   getTrendingNews(5)
-    .then(function(articles) {
-      $("#world-news").empty();
-
-      articles.forEach(function(article, index) {
-        var divEl = $("<div>");
-        divEl.attr("class", "uk-flex uk-margin-top");
-
-        var ulEl = $("<ul>");
-        ulEl.attr("class", "uk-list uk-margin-left uk-margin-remove-bottom");
-
-        var liTitle = $("<li>");
-        liTitle.text("Title: " + article.title);
-
-        var liDate = $("<li>");
-        liDate.text("Date: " + article.publishedAt);
-
-        var sourceLink = $("<a>");
-        sourceLink.attr("href", article.url);
-        sourceLink.attr("target", "_blank");
-        sourceLink.text(article.source.name);
-
-        var liSource = $("<li>");
-        liSource.text("Source: ");
-        liSource.append(sourceLink);
-
-        var liDescription = $("<li>");
-        liDescription.text("Description: " + article.description);
-
-        ulEl.append(liTitle, liDate, liSource, liDescription);
-        divEl.append(ulEl);
-        $("#world-news").append(divEl);
-        if (index < articles.length - 1) {
-          $("#world-news").append($("<hr>").attr("class", "uk-divider-small"));
-        }
-      });
+    .then(function(data) {
+      $("world-news").append(NewsElement(data));
     })
+
     .catch(function(error) {
       console.log(error);
     });

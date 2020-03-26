@@ -5,6 +5,7 @@ import {
   countrySearchByName,
   countries
 } from "./data/countries.mjs";
+import NewsElement from "./components/NewsElement.mjs";
 
 $(init);
 
@@ -22,4 +23,14 @@ function renderSpecificCountryData() {
     var newRecovered = countryTotals.NewRecoverd;
     $("#totalCasesCountry") = countryCases;
   });
+  var urlParams = new URLSearchParams(window.location.search);
+  let countryCode = urlParams.get("countryCode");
+
+  getRegionNews(countryCode, 5)
+    .then(function(data) {
+      $("world-news").append(NewsElement(data));
+    })
+    .catch(function(err) {
+      console.log(err);
+    });
 }
