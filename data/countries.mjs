@@ -1055,9 +1055,12 @@ export const countries = [
 ];
 
 export function countrySearchByCode(code) {
+  let codeFormatted = code.toLowerCase();
+
   var returnedCountryObj = null;
+
   countries.forEach(function(obj) {
-    if (code === obj.code) {
+    if (codeFormatted === obj.code.toLowerCase()) {
       returnedCountryObj = obj;
     }
   });
