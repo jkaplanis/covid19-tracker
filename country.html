@@ -49,32 +49,54 @@
         </div>
       </nav>
     </header>
+    <main class="uk-padding uk-flex-column">
+      <!-- Country Specific Data -->
+      <section
+        id="worldData"
+        class="card uk-box-shadow-large uk-flex-column uk-text-center uk-padding-small uk-margin"
+      >
+        <div class="text-white">
+          <h3 class="uk-margin-small uk-text-muted">Confirmed Cases</h3>
+          <p class="uk-margin-small stat-number-large" id="totalCasesWorld">
+            xxxx
+          </p>
+        </div>
+        <div class="uk-column-1-2">
+          <div class="text-green">
+            <p class="uk-margin-small">Recovered</p>
+            <p
+              class="uk-margin-small stat-number-small"
+              id="totalRecoveredWorld"
+            >
+              xxxx
+            </p>
+          </div>
+          <div class="text-red">
+            <p class="uk-margin-small">Deaths</p>
+            <p class="uk-margin-small stat-number-small" id="totalDeathsWorld">
+              xxxx
+            </p>
+          </div>
+        </div>
+      </section>
 
-    <section
-      id="worldData"
-      class="card uk-box-shadow-large uk-flex-column uk-text-center uk-padding-small uk-margin"
-    >
-      <div class="text-white">
-        <h3 class="uk-margin-small uk-text-muted">Confirmed Cases</h3>
-        <p class="uk-margin-small stat-number-large" id="totalCasesWorld">
-          xxxx
-        </p>
-      </div>
-      <div class="uk-column-1-2">
-        <div class="text-green">
-          <p class="uk-margin-small">Recovered</p>
-          <p class="uk-margin-small stat-number-small" id="totalRecoveredWorld">
-            xxxx
-          </p>
+      <!-- Country Specific News -->
+      <section
+        class="card uk-flex-column uk-box-shadow-larges uk-padding-small uk-margin text-white"
+      >
+        <h3 class="uk-text-center uk-text-muted">Country News</h3>
+        <div id="world-news">
+          <div class="uk-flex">
+            <!-- placeholder for image to be added in future version -->
+            <!-- <img
+          class="uk-float-left"
+          src="https://via.placeholder.com/75"
+          alt=""
+        /> -->
+          </div>
         </div>
-        <div class="text-red">
-          <p class="uk-margin-small">Deaths</p>
-          <p class="uk-margin-small stat-number-small" id="totalDeathsWorld">
-            xxxx
-          </p>
-        </div>
-      </div>
-    </section>
+      </section>
+    </main>
 
     <!-- FOR FONT AWSOME -->
     <script
