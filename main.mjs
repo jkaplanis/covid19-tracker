@@ -22,13 +22,13 @@ function init() {
 
   renderWorldData();
   renderTopCountryList();
-  // renderTrendingNewsList();
+  renderTrendingNewsList();
 
   // Use this function to setup any global event listeners
   // setUpEventListeners();
 
   // Country search input specific event listener setup
-  countryInputEventListenerInitialization();
+  // countryInputEventListenerInitialization();
 }
 
 function renderWorldData() {
@@ -93,7 +93,7 @@ function renderTrendingNewsList() {
         liTitle.text("Title: " + article.title);
 
         var liDate = $("<li>");
-        liDate.text("Date: " + article.publishedAt);
+        liDate.text("Date: " + moment(article.publishedAt).format("LL"));
 
         var sourceLink = $("<a>");
         sourceLink.attr("href", article.url);
