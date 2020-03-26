@@ -22,7 +22,7 @@ function init() {
 
   renderWorldData();
   renderTopCountryList();
-  // renderTrendingNewsList();
+  renderTrendingNewsList();
 
   // Use this function to setup any global event listeners
   // setUpEventListeners();
