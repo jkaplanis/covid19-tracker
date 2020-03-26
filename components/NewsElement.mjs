@@ -5,7 +5,6 @@
 
 export default function buildNewsElements(articles) {
   $("#world-news").empty();
-  console.log(articles);
   let elements = articles.map(function(article, index) {
     var divEl = $("<div>");
     divEl.attr("class", "uk-flex uk-margin-top");

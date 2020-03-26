@@ -15,12 +15,6 @@ import NewsElement from "./components/NewsElement.mjs";
 $(init);
 
 function init() {
-  // THIS CALL IS USED FOR GETTING A CERTAIN NUMBER OF TRENDING NEWS ARTICLES
-  // RELATED TO COVID-19
-  // getTrendingNews(5)
-  //   .then(articles => console.log(articles))
-  //   .catch(err => console.log(err))
-
   renderWorldData();
   renderTopCountryList();
   // renderTrendingNewsList();
@@ -53,8 +47,9 @@ function renderTopCountryList() {
       countries.forEach(function(country) {
         // TODO: link to country page and somehow pass country name
         // might neeed to be changed to button element w/ data-country attribute
+        var countryObj = countrySearchByName(country.Country);
         var btnLink = $("<a>");
-        btnLink.attr("href", "#");
+        btnLink.attr("href", `/country.html?countryCode=${countryObj.code}`);
         btnLink.attr(
           "class",
           "uk-button uk-width-1-1 uk-column-1-2 stat-number-small"

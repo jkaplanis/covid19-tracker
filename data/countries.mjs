@@ -527,7 +527,8 @@ export const countries = [
   },
   {
     country: "Korea, South",
-    slug: "korea-south"
+    slug: "korea-south",
+    code: "KR"
   },
   {
     country: "Kosovo",
@@ -1017,7 +1018,8 @@ export const countries = [
   },
   {
     country: "US",
-    slug: "us"
+    slug: "us",
+    code: "US"
   },
   {
     country: "Uzbekistan",
