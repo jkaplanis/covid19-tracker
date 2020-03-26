@@ -1053,3 +1053,22 @@ export const countries = [
     code: "ZW"
   }
 ];
+
+export function countrySearchByCode(code) {
+  var returnedCountryObj = null;
+  countries.forEach(function(obj) {
+    if (code === obj.code) {
+      returnedCountryObj = obj;
+    }
+  });
+  return returnedCountryObj;
+}
+export function countrySearchByName(name) {
+  var returnedCountryObj = null;
+  countries.forEach(function(obj) {
+    if (name === obj.name) {
+      returnedCountryObj = obj;
+    }
+  });
+  return returnedCountryObj;
+}

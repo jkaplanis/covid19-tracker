@@ -4,7 +4,11 @@ import {
   getSpecificCountryData,
   getWorldData
 } from "./logic/covid-api-calls.mjs";
-import { countries } from "./data/countries.mjs";
+import {
+  countrySearchByCode,
+  countrySearchByName,
+  countries
+} from "./data/countries.mjs";
 
 // Start the app logic
 $(init());
