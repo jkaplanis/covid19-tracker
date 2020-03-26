@@ -132,16 +132,19 @@ function countryInputEventListenerInitialization() {
   // ALL THE COUNTRY INPUT EVENT LISTENERS SHOULD BE IN THEIR OWN FUNCTION - FUTURE FIX
   // Country search on key up listener
   searchFormInputEl.on("keyup", countrySearchInputHandler);
+
   // Country search dropdown on blur listener
-  // searchFormInputEl.on("blur", hideCountryListHandler);
+  searchFormInputEl.on("blur", hideCountryListHandler);
+
   // Country search on focus listener
   searchFormInputEl.on("focus", showCountryListHandler);
-  // Country search dropdown item click listener
-  // $("#searchFormDropdown").click(countryClickedHandler);
+
   // Country search input submit listener
-  searchFormEl.on("submit", function(event) {
+  searchFormDropdown.on("mousedown", function(event) {
     event.preventDefault();
   });
+
+  searchFormEl.on("submit", navigateToCountryPageOnSubmit);
 }
 
 function countrySearchInputHandler(event) {
@@ -166,8 +169,14 @@ function buildCountrySearchDropdown(countryArray) {
 
   let elements = countryArray.map(function(obj) {
     let countryLiEl = $("<li>");
-    $(countryLiEl).attr("data-country-code", obj.code);
-    return $(countryLiEl).text(obj.country);
+    let linkEl = $("<a>");
+    linkEl.attr("href", "#");
+    linkEl.attr("data-country-code", obj.code);
+    linkEl.text(obj.country);
+    linkEl.on("mousedown", navigateToCountryPage);
+    countryLiEl.append(linkEl);
+
+    return $(countryLiEl);
   });
 
   if (elements.length > 0) {
@@ -181,7 +190,7 @@ function buildCountrySearchDropdown(countryArray) {
   }
 }
 
-function hideCountryListHandler() {
+function hideCountryListHandler(event) {
   $("#searchFormDropdown").css("display", "none");
 }
 
@@ -189,7 +198,28 @@ function showCountryListHandler() {
   $("#searchFormDropdown").css("display", "block");
 }
 
-// This is not working see issue #55
-function countryClickedHandler(event) {
-  console.log("clicked");
+function navigateToCountryPage(event) {
+  // Update this string to pass the country code to the country specific page
+  window.location.href = `country.html?countryCode=${$(event.target).attr(
+    "data-country-code"
+  )}`;
+}
+
+function navigateToCountryPageOnSubmit(event) {
+  let inputValue = $(".uk-input")
+    .val()
+    .toLowerCase();
+  let filteredCountry = countries.filter(function(obj) {
+    let countryName = obj.country ? obj.country.toLowerCase() : null;
+    let countryCode = obj.code ? obj.country.toLowerCase() : null;
+    if (inputValue === countryName || inputValue === countryCode) {
+      return true;
+    } else {
+      return false;
+    }
+  })[0];
+
+  if (filteredCountry) {
+    window.location.href = `country.html?countryCode=${filteredCountry.code}`;
+  }
 }
