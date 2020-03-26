@@ -90,9 +90,6 @@ function renderTrendingNewsList() {
 }
 
 function setUpEventListeners() {
-  $("body").on("click", function() {
-    if (event.target === $("#searchFormDropdown")) console.log("click", event);
-  });
   // Global event listeners go here
 }
 
@@ -172,9 +169,7 @@ function showCountryListHandler() {
 
 function navigateToCountryPage(event) {
   let countryCode = $(event.target).attr("data-country-code");
-  console.log(countryCode);
   let countryObj = countrySearchByCode(countryCode);
-  console.log(countryObj);
 
   if (countryObj) {
     addSearchToLocalStorage(countryObj);
