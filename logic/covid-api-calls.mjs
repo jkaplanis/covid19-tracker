@@ -20,12 +20,24 @@ export async function getTopCountryData(numOfCountries) {
 }
 
 /**
- * @param {string} country country to search for
+ * @param {string} countryName country to search for
  * @return {obj}
  * return data for specific country
  */
-export function getSpecificCountryData(country) {
-  console.log("GETTING COUNTRY SPECIFIC DATA");
+export async function getSpecificCountryData(countryName) {
+  const response = await $.ajax({
+    url: SUMMARY_QUERY_URL,
+    method: "GET"
+  });
+
+  var returnedCountryObj = null;
+  response.Countries.forEach(function(obj) {
+    if (countryName.toLowerCase() === obj.Country.toLowerCase()) {
+      returnedCountryObj = obj;
+    }
+  });
+
+  return returnedCountryObj;
 }
 
 export async function getWorldData() {
