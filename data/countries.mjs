@@ -1063,10 +1063,14 @@ export function countrySearchByCode(code) {
   });
   return returnedCountryObj;
 }
+
 export function countrySearchByName(name) {
+  let nameFormatted = name.toLowerCase();
+
   var returnedCountryObj = null;
+
   countries.forEach(function(obj) {
-    if (name === obj.name) {
+    if (nameFormatted === obj.country.toLowerCase()) {
       returnedCountryObj = obj;
     }
   });
