@@ -11,7 +11,7 @@ import {
 } from "./data/countries.mjs";
 
 // Start the app logic
-$(init());
+$(init);
 
 function init() {
   // THIS CALL IS USED FOR GETTING A CERTAIN NUMBER OF TRENDING NEWS ARTICLES
@@ -77,10 +77,8 @@ function renderTopCountryList() {
 }
 
 function renderTrendingNewsList() {
-  console.log("attempting to render trending news list");
   getTrendingNews(5)
     .then(function(articles) {
-      console.log(articles);
       $("#world-news").empty();
 
       articles.forEach(function(article, index) {
