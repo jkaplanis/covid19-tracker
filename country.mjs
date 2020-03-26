@@ -6,6 +6,6 @@ import {
   countries
 } from "./data/countries.mjs";
 
-$(init());
+$(init);
 
 function init() {}
