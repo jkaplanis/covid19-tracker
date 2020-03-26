@@ -1,7 +1,8 @@
 import { getTrendingNews, getRegionNews } from "./logic/newsAPI.mjs";
 import {
   getTopCountryData,
-  getSpecificCountryData
+  getSpecificCountryData,
+  getWorldData
 } from "./logic/covid-api-calls.mjs";
 import { countries } from "./data/countries.mjs";
 
@@ -15,9 +16,22 @@ function init() {
   //   .then(articles => console.log(articles))
   //   .catch(err => console.log(err))
 
+  renderWorldData();
   renderTopCountryList();
   // renderTrendingNewsList();
   setUpEventListeners();
+}
+
+function renderWorldData() {
+  getWorldData()
+    .then(function(totals) {
+      $("#totalCasesWorld").text(totals.confirmed.toLocaleString());
+      $("#totalRecoveredWorld").text(totals.recovered.toLocaleString());
+      $("#totalDeathsWorld").text(totals.deaths.toLocaleString());
+    })
+    .catch(function(error) {
+      console.log(error);
+    });
 }
 
 function renderTopCountryList() {
