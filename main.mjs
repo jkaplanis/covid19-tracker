@@ -77,6 +77,7 @@ function renderTopCountryList() {
 }
 
 function renderTrendingNewsList() {
+  console.log("attempting to render trending news list");
   getTrendingNews(5)
     .then(function(articles) {
       console.log(articles);

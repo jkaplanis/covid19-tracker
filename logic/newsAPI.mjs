@@ -14,6 +14,8 @@ export async function getTrendingNews(numOfArticles) {
       method: "GET"
     });
 
+    console.log(response);
+
     return response.articles.slice(0, numOfArticles);
   } else {
     throw new Error(
