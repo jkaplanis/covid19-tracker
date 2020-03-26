@@ -8,4 +8,18 @@ import {
 
 $(init);
 
-function init() {}
+function init() {
+  // renderSpecificCountryData();
+}
+
+function renderSpecificCountryData() {
+  getSpecificCountryData().then(function(countryTotals) {
+    var countryCases = countryTotals.TotalConfirmed.toLocaleString();
+    var newCases = countryTotals.NewConfirmed;
+    var countryDeaths = countryTotals.TotalDeaths;
+    var newDeaths = countryTotals.newDeaths;
+    var countryRecovered = countryTotals.TotalRecovered;
+    var newRecovered = countryTotals.NewRecoverd;
+    $("#totalCasesCountry") = countryCases;
+  });
+}
