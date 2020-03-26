@@ -28,6 +28,28 @@ export function getSpecificCountryData(country) {
   console.log("GETTING COUNTRY SPECIFIC DATA");
 }
 
+export async function getWorldData() {
+  const response = await $.ajax({
+    url: SUMMARY_QUERY_URL,
+    method: "GET"
+  });
+
+  var confirmed = 0;
+  var recovered = 0;
+  var deaths = 0;
+  response.Countries.forEach(function(country) {
+    confirmed += country.TotalConfirmed;
+    recovered += country.TotalRecovered;
+    deaths += country.TotalDeaths;
+  });
+
+  return {
+    confirmed: confirmed,
+    recovered: recovered,
+    deaths: deaths
+  };
+}
+
 // INTERNAL LOGIC
 function _sortCountries(firstCountry, secondCountry) {
   var first = parseInt(firstCountry.TotalConfirmed);
