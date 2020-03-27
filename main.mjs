@@ -128,7 +128,6 @@ function buildCountrySearchDropdown(countryArray) {
   let elements = countryArray.map(function(obj) {
     let countryLiEl = $("<li>");
     let linkEl = $("<a>");
-    console.log(obj);
     linkEl.attr("href", `/country.html?country=${obj.country}`);
     linkEl.attr("data-country-name", obj.country);
     linkEl.text(obj.country);
