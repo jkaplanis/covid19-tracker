@@ -109,37 +109,39 @@ function countrySearchInputHandler(event) {
   let input = event.target;
   let inputValue = input.value;
   let results = [];
-
-  countries.forEach(function(country) {
-    inputValue.replace(/\\/g, "");
-    let regexp = new RegExp(`${inputValue}`, "gi");
-    if (regexp.test(country.country)) {
-      results.push(country);
-    }
-
+  if (inputValue) {
+    countries.forEach(function(obj) {
+      inputValue.replace(/\\/g, "");
+      let regexp = new RegExp(`${inputValue}`, "gi");
+      if (regexp.test(obj.country)) {
+        results.push(obj);
+      }
+    });
     buildCountrySearchDropdown(results);
-  });
+  }
 }
 
 function buildCountrySearchDropdown(countryArray) {
   $("#searchFormDropdown").empty();
   let countryUlEl = $("<ul>");
 
-  let elements = countryArray.map(function(obj) {
-    let countryLiEl = $("<li>");
-    let linkEl = $("<a>");
-    linkEl.attr("href", `/country.html?country=${obj.country}`);
-    linkEl.attr("data-country-name", obj.country);
-    linkEl.text(obj.country);
-    linkEl.on("mousedown", navigateToCountryPage);
-    countryLiEl.append(linkEl);
+  if (countryArray.length > 0) {
+    let elements = countryArray.map(function(obj) {
+      let countryLiEl = $("<li>");
+      let linkEl = $("<a>");
+      linkEl.attr("href", `/country.html?country=${obj.country}`);
+      linkEl.attr("data-country-name", obj.country);
+      linkEl.text(obj.country);
+      countryLiEl.append(linkEl);
+      linkEl.on("mousedown", navigateToCountryPage);
 
-    return $(countryLiEl);
-  });
+      return $(countryLiEl);
+    });
 
-  if (elements.length > 0) {
-    $(countryUlEl).append(elements);
-    $("#searchFormDropdown").append(countryUlEl);
+    if (elements.length > 0) {
+      $(countryUlEl).append(elements);
+      $("#searchFormDropdown").append(countryUlEl);
+    }
   } else {
     $(countryUlEl)
       .append("<li>")
