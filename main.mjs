@@ -17,7 +17,7 @@ $(init);
 function init() {
   renderWorldData();
   renderTopCountryList();
-  // renderTrendingNewsList();
+  renderTrendingNewsList();
 
   // Country search input specific event listener setup
   countryInputEventListenerInitialization();
@@ -54,7 +54,10 @@ function renderTopCountryList() {
         countryName.text(country.Country);
 
         var totalCases = $("<p>");
-        totalCases.attr("class", "uk-margin-remove uk-text-left");
+        totalCases.attr(
+          "class",
+          "uk-margin-remove uk-text-left text-red uk-text-bold"
+        );
         totalCases.text(parseInt(country.TotalConfirmed).toLocaleString());
 
         btnLink.append(countryName, totalCases);
@@ -87,7 +90,6 @@ function countryInputEventListenerInitialization() {
   let searchFormInputEl = $("#searchForm input");
   let searchFormDropdown = $("#searchFormDropdown");
 
-  // ALL THE COUNTRY INPUT EVENT LISTENERS SHOULD BE IN THEIR OWN FUNCTION - FUTURE FIX
   // Country search on key up listener
   searchFormInputEl.on("keyup", countrySearchInputHandler);
 
