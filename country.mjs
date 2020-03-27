@@ -13,14 +13,7 @@ function init() {
   var urlParams = new URLSearchParams(window.location.search);
   let countryName = urlParams.get("country");
   let countryObj = countrySearchByName(countryName);
-
-  getRegionNews(countryObj.code, 5)
-    .then(function(data) {
-      $("world-news").append(NewsElement(data));
-    })
-    .catch(function(err) {
-      console.log(err);
-    });
+  buildNewsArticles(countryObj);
 
   renderSpecificCountryData(countryName);
 }
@@ -44,4 +37,19 @@ function renderSpecificCountryData(countryName) {
       "+" + countryDataObj.NewRecovered.toLocaleString()
     );
   });
+}
+
+function buildNewsArticles(countryObj) {
+  getRegionNews(countryObj.code, 5)
+    .then(function(data) {
+      console.log(data);
+      if (data.length > 0) {
+        $("#world-news").append(NewsElement(data));
+      } else {
+        $("#worldNewsSection").css("display", "none");
+      }
+    })
+    .catch(function(err) {
+      console.log(err);
+    });
 }
