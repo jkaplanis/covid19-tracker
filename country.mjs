@@ -42,7 +42,6 @@ function renderSpecificCountryData(countryName) {
 function buildNewsArticles(countryObj) {
   getRegionNews(countryObj.code, 5)
     .then(function(data) {
-      console.log(data);
       if (data.length > 0) {
         $("#world-news").append(NewsElement(data));
       } else {

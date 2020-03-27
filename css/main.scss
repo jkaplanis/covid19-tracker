@@ -4,10 +4,20 @@ $color-text-white: whitesmoke;
 $color-background: #211b1b;
 $color-background-card: #494744;
 $color-background-header: #0f0f0f;
+$color-white: #eee;
 
 @import "./scss/variables-theme.scss";
 @import "./scss/mixins-theme.scss";
 @import "./scss/uikit-theme.scss";
+
+h1,
+h2,
+h3,
+h4 {
+  color: $color-white;
+  font-family: "Inconsolata", monospace;
+  font-weight: bold;
+}
 
 *,
 h3 {
