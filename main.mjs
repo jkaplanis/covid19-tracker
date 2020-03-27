@@ -10,6 +10,7 @@ import {
   countries
 } from "./data/countries.mjs";
 import NewsElement from "./components/NewsElement.mjs";
+import SearchHistory from "./components/SearchHistory.mjs";
 
 // Start the app logic
 $(init);
@@ -22,6 +23,8 @@ function init() {
   // Country search input specific event listener setup
   countryInputEventListenerInitialization();
   setUpEventListeners();
+
+  SearchHistory();
 }
 
 function renderWorldData() {
@@ -51,7 +54,11 @@ function renderTopCountryList() {
 
         var countryName = $("<p>");
         countryName.attr("class", "uk-margin-remove uk-text-right");
-        countryName.text(country.Country);
+        if (country.Country === "US") {
+          countryName.text("United States");
+        } else {
+          countryName.text(country.Country);
+        }
 
         var totalCases = $("<p>");
         totalCases.attr(
