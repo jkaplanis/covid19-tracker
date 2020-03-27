@@ -7,10 +7,13 @@ export default function buildNewsElements(articles) {
   $("#world-news").empty();
   let elements = articles.map(function(article, index) {
     var divEl = $("<div>");
-    divEl.attr("class", "uk-flex uk-margin-top");
+    divEl.attr("class", "uk-flex uk-margin-top uk-width-1-1");
 
     var ulEl = $("<ul>");
-    ulEl.attr("class", "uk-list uk-margin-left uk-margin-remove-bottom");
+    ulEl.attr(
+      "class",
+      "uk-list uk-margin-left uk-margin-right uk-margin-remove-bottom"
+    );
 
     var liTitle = $("<li>");
     liTitle.append($("<h4>").text(article.title));
@@ -33,7 +36,7 @@ export default function buildNewsElements(articles) {
     divEl.append(ulEl);
     $("#world-news").append(divEl);
     if (index < articles.length - 1) {
-      $("#world-news").append($("<hr>").attr("class", "uk-divider-small"));
+      $("#world-news").append($("<hr>"));
     }
   });
 

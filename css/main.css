@@ -11920,8 +11920,7 @@ h4 {
   font-weight: bold;
 }
 
-*,
-h3 {
+* {
   font-family: "Inconsolata", monospace;
 }
 
@@ -11936,6 +11935,12 @@ body {
   background-color: #211b1b;
   min-height: 100vh;
   position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
 }
 
 header {
@@ -11944,8 +11949,7 @@ header {
 
 footer {
   background: #0f0f0f;
-  position: absolute;
-  bottom: 0;
+  flex: 0 0 auto;
 }
 
 .uk-navbar-container {
