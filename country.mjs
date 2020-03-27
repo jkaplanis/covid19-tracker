@@ -14,13 +14,23 @@ function init() {
   let countryName = urlParams.get("country");
   let countryObj = countrySearchByName(countryName);
   buildNewsArticles(countryObj);
+  console.log(countryName);
+  renderSpecificCountryName(countryName);
+}
 
-  renderSpecificCountryData(countryName);
+function renderSpecificCountryName(countryName) {
+  if (countryName === "US") {
+    $("#specificCountryName").text("United States");
+    renderSpecificCountryData(countryName);
+  } else {
+    $("#specificCountryName").text(countryName);
+    renderSpecificCountryData(countryName);
+  }
 }
 
 function renderSpecificCountryData(countryName) {
   getSpecificCountryData(countryName).then(function(countryDataObj) {
-    $("#specificCountryName").text(countryDataObj.Country);
+    // $("#specificCountryName").text(countryDataObj.Country);
     $("#totalCasesCountry").text(
       countryDataObj.TotalConfirmed.toLocaleString()
     );
