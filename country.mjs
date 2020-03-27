@@ -14,7 +14,6 @@ function init() {
   let countryName = urlParams.get("country");
   let countryObj = countrySearchByName(countryName);
   buildNewsArticles(countryObj);
-  console.log(countryName);
   renderSpecificCountryName(countryName);
 }
 
