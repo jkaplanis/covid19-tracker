@@ -13,7 +13,7 @@ export default function buildNewsElements(articles) {
     ulEl.attr("class", "uk-list uk-margin-left uk-margin-remove-bottom");
 
     var liTitle = $("<li>");
-    liTitle.append($("<strong>").text(article.title));
+    liTitle.append($("<h4>").text(article.title));
 
     var liDate = $("<li>");
     liDate.text(moment(article.publishedAt).format("LL"));
