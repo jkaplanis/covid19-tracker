@@ -11,9 +11,10 @@ $(init);
 
 function init() {
   var urlParams = new URLSearchParams(window.location.search);
-  let countryCode = urlParams.get("countryCode");
+  let countryName = urlParams.get("country");
+  let countryObj = countrySearchByName(countryName);
 
-  getRegionNews(countryCode, 5)
+  getRegionNews(countryObj.code, 5)
     .then(function(data) {
       $("world-news").append(NewsElement(data));
     })
@@ -21,13 +22,10 @@ function init() {
       console.log(err);
     });
 
-  renderSpecificCountryData(countryCode);
+  renderSpecificCountryData(countryName);
 }
 
-function renderSpecificCountryData(countryCode) {
-  var countryObj = countrySearchByCode(countryCode);
-  var countryName = countryObj.country;
-
+function renderSpecificCountryData(countryName) {
   getSpecificCountryData(countryName).then(function(countryDataObj) {
     $("#totalCasesCountry").text(
       countryDataObj.TotalConfirmed.toLocaleString()

@@ -19,9 +19,6 @@ function init() {
   renderTopCountryList();
   // renderTrendingNewsList();
 
-  // Use this function to setup any global event listeners
-  // setUpEventListeners();
-
   // Country search input specific event listener setup
   countryInputEventListenerInitialization();
   setUpEventListeners();
@@ -45,14 +42,11 @@ function renderTopCountryList() {
       $("#countryListData").empty();
       // dynamically generate list items on main page
       countries.forEach(function(country) {
-        // TODO: link to country page and somehow pass country name
-        // might neeed to be changed to button element w/ data-country attribute
-        var countryObj = countrySearchByName(country.Country);
         var btnLink = $("<a>");
-        btnLink.attr("href", `/country.html?countryCode=${countryObj.code}`);
+        btnLink.attr("href", `/country.html?country=${country.Country}`);
         btnLink.attr(
           "class",
-          "uk-button uk-width-1-1 uk-column-1-2 stat-number-small"
+          "uk-button uk-width-1-1 uk-column-1-2 stat-number-small uk-padding-remove uk-margin-small"
         );
 
         var countryName = $("<p>");
@@ -134,8 +128,9 @@ function buildCountrySearchDropdown(countryArray) {
   let elements = countryArray.map(function(obj) {
     let countryLiEl = $("<li>");
     let linkEl = $("<a>");
-    linkEl.attr("href", `/country.html?countryCode=${obj.code}`);
-    linkEl.attr("data-country-code", obj.code);
+    console.log(obj);
+    linkEl.attr("href", `/country.html?country=${obj.country}`);
+    linkEl.attr("data-country-name", obj.country);
     linkEl.text(obj.country);
     linkEl.on("mousedown", navigateToCountryPage);
     countryLiEl.append(linkEl);
@@ -163,8 +158,8 @@ function showCountryListHandler() {
 }
 
 function navigateToCountryPage(event) {
-  let countryCode = $(event.target).attr("data-country-code");
-  let countryObj = countrySearchByCode(countryCode);
+  let countryName = $(event.target).attr("data-country-name");
+  let countryObj = countrySearchByName(countryName);
 
   if (countryObj) {
     addSearchToLocalStorage(countryObj);
@@ -178,7 +173,7 @@ function navigateToCountryPageOnSubmit(event) {
 
   if (returnedCountryData) {
     addSearchToLocalStorage(returnedCountryData);
-    window.location.href = `country.html?countryCode=${returnedCountryData.code}`;
+    window.location.href = `country.html?country=${returnedCountryData.country}`;
   }
 }
 
