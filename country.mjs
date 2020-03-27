@@ -6,6 +6,7 @@ import {
   countries
 } from "./data/countries.mjs";
 import NewsElement from "./components/NewsElement.mjs";
+import SearchHistory from "./components/SearchHistory.mjs";
 
 $(init);
 
@@ -15,6 +16,8 @@ function init() {
   let countryObj = countrySearchByName(countryName);
   buildNewsArticles(countryObj);
   renderSpecificCountryName(countryName);
+
+  SearchHistory();
 }
 
 function renderSpecificCountryName(countryName) {
