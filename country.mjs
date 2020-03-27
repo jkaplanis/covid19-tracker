@@ -20,6 +20,7 @@ function init() {
 
 function renderSpecificCountryData(countryName) {
   getSpecificCountryData(countryName).then(function(countryDataObj) {
+    $("#specificCountryName").text(countryDataObj.Country);
     $("#totalCasesCountry").text(
       countryDataObj.TotalConfirmed.toLocaleString()
     );
