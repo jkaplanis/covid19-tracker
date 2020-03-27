@@ -11916,6 +11916,13 @@ h3 {
   font-family: "Inconsolata", monospace;
 }
 
+input {
+  border-radius: 5px !important;
+  outline: none !important;
+  border: none !important;
+  box-shadow: 2px 2px 5px black;
+}
+
 body {
   background-color: #211b1b;
   min-height: 100vh;
@@ -11937,7 +11944,9 @@ footer {
 }
 
 .card {
-  background-color: #494744;
+  background-color: #353433;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px black;
 }
 
 .text-red {
