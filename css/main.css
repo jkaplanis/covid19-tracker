@@ -11911,6 +11911,15 @@ h3 {
     page-break-after: avoid;
   }
 }
+h1,
+h2,
+h3,
+h4 {
+  color: #eee;
+  font-family: "Inconsolata", monospace;
+  font-weight: bold;
+}
+
 *,
 h3 {
   font-family: "Inconsolata", monospace;
