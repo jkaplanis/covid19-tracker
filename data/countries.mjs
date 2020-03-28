@@ -1,1089 +1,1004 @@
 export const countries = [
   {
-    country: " Azerbaijan",
-    slug: "-azerbaijan",
-    code: "AZ"
-  },
-  {
     country: "Afghanistan",
-    slug: "afghanistan",
+    display: "Afghanistan",
     code: "AF"
   },
   {
     country: "Albania",
-    slug: "albania",
+    display: "Albania",
     code: "AL"
   },
   {
     country: "Algeria",
-    slug: "algeria",
+    display: "Algeria",
     code: "DZ"
   },
   {
     country: "Andorra",
-    slug: "andorra",
+    display: "Andorra",
     code: "AD"
   },
   {
     country: "Angola",
-    slug: "angola",
+    display: "Angola",
     code: "AO"
   },
   {
+    country: "Anguilla",
+    display: "Anguilla",
+    code: "AI"
+  },
+  {
     country: "Antigua and Barbuda",
-    slug: "antigua-and-barbuda",
+    display: "Antigua and Barbuda",
     code: "AG"
   },
   {
     country: "Argentina",
-    slug: "argentina",
+    display: "Argentina",
     code: "AR"
   },
   {
     country: "Armenia",
-    slug: "armenia",
+    display: "Armenia",
     code: "AM"
   },
   {
     country: "Aruba",
-    slug: "aruba",
+    display: "Aruba",
     code: "AW"
   },
   {
     country: "Australia",
-    slug: "australia",
+    display: "Australia",
     code: "AU"
   },
   {
     country: "Austria",
-    slug: "austria",
+    display: "Austria",
     code: "AT"
   },
   {
     country: "Azerbaijan",
-    slug: "azerbaijan",
+    display: "Azerbaijan",
     code: "AZ"
   },
   {
     country: "Bahamas",
-    slug: "bahamas",
-    code: "BS"
-  },
-  {
-    country: "Bahamas, The",
-    slug: "bahamas-the",
+    display: "Bahamas",
     code: "BS"
   },
   {
     country: "Bahrain",
-    slug: "bahrain",
+    display: "Bahrain",
     code: "BH"
   },
   {
     country: "Bangladesh",
-    slug: "bangladesh",
+    display: "Bangladesh",
     code: "BD"
   },
   {
     country: "Barbados",
-    slug: "barbados",
+    display: "Barbados",
     code: "BB"
   },
   {
     country: "Belarus",
-    slug: "belarus",
+    display: "Belarus",
     code: "BY"
   },
   {
     country: "Belgium",
-    slug: "belgium",
+    display: "Belgium",
     code: "BE"
   },
   {
     country: "Belize",
-    slug: "belize",
+    display: "Belize",
     code: "BZ"
   },
   {
     country: "Benin",
-    slug: "benin",
+    display: "Benin",
     code: "BJ"
   },
   {
+    country: "Bermuda",
+    display: "Bermuda",
+    code: "BM"
+  },
+  {
     country: "Bhutan",
-    slug: "bhutan",
+    display: "Bhutan",
     code: "BT"
   },
   {
     country: "Bolivia",
-    slug: "bolivia",
+    display: "Bolivia",
     code: "BO"
   },
   {
     country: "Bosnia and Herzegovina",
-    slug: "bosnia-and-herzegovina",
+    display: "Bosnia and Herzegovina",
     code: "BA"
   },
   {
     country: "Brazil",
-    slug: "brazil",
+    display: "Brazil",
     code: "BR"
   },
   {
+    country: "British Virgin Islands",
+    display: "British Virgin Islands",
+    code: "VG"
+  },
+  {
     country: "Brunei",
-    slug: "brunei",
+    display: "Brunei",
     code: "BN"
   },
   {
     country: "Bulgaria",
-    slug: "bulgaria",
+    display: "Bulgaria",
     code: "BG"
   },
   {
     country: "Burkina Faso",
-    slug: "burkina-faso",
+    display: "Burkina Faso",
     code: "BF"
   },
   {
+    country: "CAR",
+    display: "Central African Republic",
+    code: "CF"
+  },
+  {
     country: "Cabo Verde",
-    slug: "cabo-verde",
+    display: "Cabo Verde",
     code: "CV"
   },
   {
     country: "Cambodia",
-    slug: "cambodia",
+    display: "Cambodia",
     code: "KH"
   },
   {
     country: "Cameroon",
-    slug: "cameroon",
+    display: "Cameroon",
     code: "CM"
   },
   {
     country: "Canada",
-    slug: "canada",
+    display: "Canada",
     code: "CA"
   },
   {
-    country: "Cape Verde",
-    slug: "cape-verde",
-    code: "CV"
-  },
-  {
     country: "Cayman Islands",
-    slug: "cayman-islands",
+    display: "Cayman Islands",
     code: "KY"
   },
   {
-    country: "Central African Republic",
-    slug: "central-african-republic",
-    code: "CF"
-  },
-  {
     country: "Chad",
-    slug: "chad",
+    display: "Chad",
     code: "TD"
   },
   {
     country: "Channel Islands",
-    slug: "channel-islands"
+    display: "Channel Islands"
   },
   {
     country: "Chile",
-    slug: "chile",
+    display: "Chile",
     code: "CL"
   },
   {
     country: "China",
-    slug: "china",
+    display: "China",
     code: "CN"
   },
   {
     country: "Colombia",
-    slug: "colombia",
+    display: "Colombia",
     code: "CO"
   },
   {
-    country: "Congo (Brazzaville)",
-    slug: "congo-(brazzaville)",
-    code: "CG"
-  },
-  {
-    country: "Congo (Kinshasa)",
-    slug: "congo-(kinshasa)",
+    country: "Congo",
+    display: "Congo",
     code: "CG"
   },
   {
     country: "Costa Rica",
-    slug: "costa-rica",
+    display: "Costa Rica",
     code: "CR"
   },
   {
-    country: "Cote d'Ivoire",
-    slug: "cote-divoire",
-    code: "CI"
-  },
-  {
     country: "Croatia",
-    slug: "croatia",
+    display: "Croatia",
     code: "HR"
   },
   {
-    country: "Cruise Ship",
-    slug: "cruise-ship"
-  },
-  {
     country: "Cuba",
-    slug: "cuba",
+    display: "Cuba",
     code: "CU"
   },
   {
-    country: "Curacao",
-    slug: "curacao",
+    country: "Curaçao",
+    display: "Curaçao",
     code: "CW"
   },
   {
     country: "Cyprus",
-    slug: "cyprus",
+    display: "Cyprus",
     code: "CY"
   },
   {
-    country: "Czech Republic",
-    slug: "czech-republic",
+    country: "Czechia",
+    display: "Czech Republic",
     code: "CZ"
   },
   {
-    country: "Czechia",
-    slug: "czechia",
-    code: "CZ"
+    country: "DRC",
+    display: "DR of Congo",
+    code: "CD"
   },
   {
     country: "Denmark",
-    slug: "denmark",
+    display: "Denmark",
     code: "DK"
   },
   {
+    country: "Diamond Princess",
+    display: "Diamond Princess"
+  },
+  {
     country: "Djibouti",
-    slug: "djibouti",
+    display: "Djibouti",
     code: "DJ"
   },
   {
     country: "Dominica",
-    slug: "dominica",
+    display: "Dominica",
     code: "DM"
   },
   {
     country: "Dominican Republic",
-    slug: "dominican-republic",
+    display: "Dominican Republic",
     code: "DO"
   },
   {
-    country: "East Timor",
-    slug: "east-timor",
-    code: "TL"
-  },
-  {
     country: "Ecuador",
-    slug: "ecuador",
+    display: "Ecuador",
     code: "EC"
   },
   {
     country: "Egypt",
-    slug: "egypt",
+    display: "Egypt",
     code: "EG"
   },
   {
     country: "El Salvador",
-    slug: "el-salvador",
+    display: "El Salvador",
     code: "SV"
   },
   {
     country: "Equatorial Guinea",
-    slug: "equatorial-guinea",
+    display: "Equatorial Guinea",
     code: "GQ"
   },
   {
     country: "Eritrea",
-    slug: "eritrea",
+    display: "Eritrea",
     code: "ER"
   },
   {
     country: "Estonia",
-    slug: "estonia",
+    display: "Estonia",
     code: "EE"
   },
   {
     country: "Eswatini",
-    slug: "eswatini",
+    display: "Eswatini",
     code: "SZ"
   },
   {
     country: "Ethiopia",
-    slug: "ethiopia",
+    display: "Ethiopia",
     code: "ET"
   },
   {
-    country: "Faroe Islands",
-    slug: "faroe-islands",
+    country: "Faeroe Islands",
+    display: "Faeroe Islands",
     code: "FO"
   },
   {
     country: "Fiji",
-    slug: "fiji",
+    display: "Fiji",
     code: "FJ"
   },
   {
     country: "Finland",
-    slug: "finland",
+    display: "Finland",
     code: "FI"
   },
   {
     country: "France",
-    slug: "france",
+    display: "France",
     code: "FR"
   },
   {
     country: "French Guiana",
-    slug: "french-guiana",
+    display: "French Guiana",
     code: "GF"
   },
   {
+    country: "French Polynesia",
+    display: "French Polynesia",
+    code: "PF"
+  },
+  {
     country: "Gabon",
-    slug: "gabon",
+    display: "Gabon",
     code: "GA"
   },
   {
     country: "Gambia",
-    slug: "gambia",
-    code: "GM"
-  },
-  {
-    country: "Gambia, The",
-    slug: "gambia-the",
+    display: "Gambia",
     code: "GM"
   },
   {
     country: "Georgia",
-    slug: "georgia",
+    display: "Georgia",
     code: "GE"
   },
   {
     country: "Germany",
-    slug: "germany",
+    display: "Germany",
     code: "DE"
   },
   {
     country: "Ghana",
-    slug: "ghana",
+    display: "Ghana",
     code: "GH"
   },
   {
     country: "Gibraltar",
-    slug: "gibraltar",
+    display: "Gibraltar",
     code: "GI"
   },
   {
     country: "Greece",
-    slug: "greece",
+    display: "Greece",
     code: "GR"
   },
   {
     country: "Greenland",
-    slug: "greenland",
+    display: "Greenland",
     code: "GL"
   },
   {
     country: "Grenada",
-    slug: "grenada",
+    display: "Grenada",
     code: "GD"
   },
   {
     country: "Guadeloupe",
-    slug: "guadeloupe",
+    display: "Guadeloupe",
     code: "GP"
   },
   {
-    country: "Guam",
-    slug: "guam",
-    code: "GU"
-  },
-  {
     country: "Guatemala",
-    slug: "guatemala",
+    display: "Guatemala",
     code: "GT"
   },
   {
-    country: "Guernsey",
-    slug: "guernsey",
-    code: "GG"
-  },
-  {
     country: "Guinea",
-    slug: "guinea",
+    display: "Guinea",
     code: "GN"
   },
   {
+    country: "Guinea-Bissau",
+    display: "Guinea-Bissau",
+    code: "GW"
+  },
+  {
     country: "Guyana",
-    slug: "guyana",
+    display: "Guyana",
     code: "GY"
   },
   {
     country: "Haiti",
-    slug: "haiti",
+    display: "Haiti",
     code: "HT"
   },
   {
-    country: "Holy See",
-    slug: "holy-see",
-    code: "VA"
-  },
-  {
     country: "Honduras",
-    slug: "honduras",
+    display: "Honduras",
     code: "HN"
   },
   {
     country: "Hong Kong",
-    slug: "hong-kong",
-    code: "HK"
-  },
-  {
-    country: "Hong Kong SAR",
-    slug: "hong-kong-sar",
+    display: "Hong Kong",
     code: "HK"
   },
   {
     country: "Hungary",
-    slug: "hungary",
+    display: "Hungary",
     code: "HU"
   },
   {
     country: "Iceland",
-    slug: "iceland",
+    display: "Iceland",
     code: "IS"
   },
   {
     country: "India",
-    slug: "india",
+    display: "India",
     code: "IN"
   },
   {
     country: "Indonesia",
-    slug: "indonesia",
+    display: "Indonesia",
     code: "ID"
   },
   {
     country: "Iran",
-    slug: "iran",
-    code: "IR"
-  },
-  {
-    country: "Iran (Islamic Republic of)",
-    slug: "iran-(islamic-republic-of)",
+    display: "Iran",
     code: "IR"
   },
   {
     country: "Iraq",
-    slug: "iraq",
+    display: "Iraq",
     code: "IQ"
   },
   {
     country: "Ireland",
-    slug: "ireland",
+    display: "Ireland",
     code: "IE"
   },
   {
+    country: "Isle of Man",
+    display: "Isle of Man",
+    code: "IM"
+  },
+  {
     country: "Israel",
-    slug: "israel",
+    display: "Israel",
     code: "IL"
   },
   {
     country: "Italy",
-    slug: "italy",
+    display: "Italy",
     code: "IT"
   },
   {
     country: "Ivory Coast",
-    slug: "ivory-coast",
+    display: "Ivory Coast",
     code: "CI"
   },
   {
     country: "Jamaica",
-    slug: "jamaica",
+    display: "Jamaica",
     code: "JM"
   },
   {
     country: "Japan",
-    slug: "japan",
+    display: "Japan",
     code: "JP"
   },
   {
-    country: "Jersey",
-    slug: "jersey",
-    code: "JE"
-  },
-  {
     country: "Jordan",
-    slug: "jordan",
+    display: "Jordan",
     code: "JO"
   },
   {
     country: "Kazakhstan",
-    slug: "kazakhstan",
+    display: "Kazakhstan",
     code: "KZ"
   },
   {
     country: "Kenya",
-    slug: "kenya",
+    display: "Kenya",
     code: "KE"
   },
   {
-    country: "Korea, South",
-    slug: "korea-south",
-    code: "KR"
-  },
-  {
-    country: "Kosovo",
-    slug: "kosovo",
-    code: "XK"
-  },
-  {
     country: "Kuwait",
-    slug: "kuwait",
+    display: "Kuwait",
     code: "KW"
   },
   {
     country: "Kyrgyzstan",
-    slug: "kyrgyzstan",
+    display: "Kyrgyzstan",
     code: "KG"
   },
   {
+    country: "Laos",
+    display: "Laos",
+    code: "LA"
+  },
+  {
     country: "Latvia",
-    slug: "latvia",
+    display: "Latvia",
     code: "LV"
   },
   {
     country: "Lebanon",
-    slug: "lebanon",
+    display: "Lebanon",
     code: "LB"
   },
   {
     country: "Liberia",
-    slug: "liberia",
+    display: "Liberia",
     code: "LR"
   },
   {
+    country: "Libya",
+    display: "Libya",
+    code: "LY"
+  },
+  {
     country: "Liechtenstein",
-    slug: "liechtenstein",
+    display: "Liechtenstein",
     code: "LI"
   },
   {
     country: "Lithuania",
-    slug: "lithuania",
+    display: "Lithuania",
     code: "LT"
   },
   {
     country: "Luxembourg",
-    slug: "luxembourg",
+    display: "Luxembourg",
     code: "LU"
   },
   {
-    country: "Macao SAR",
-    slug: "macao-sar",
-    code: "MO"
+    country: "MS Zaandam",
+    display: "MS Zaandam"
   },
   {
-    country: "Macau",
-    slug: "macau",
+    country: "Macao",
+    display: "Macao",
     code: "MO"
   },
   {
     country: "Madagascar",
-    slug: "madagascar",
+    display: "Madagascar",
     code: "MG"
   },
   {
-    country: "Mainland China",
-    slug: "mainland-china",
-    code: "CN"
-  },
-  {
     country: "Malaysia",
-    slug: "malaysia",
+    display: "Malaysia",
     code: "MY"
   },
   {
     country: "Maldives",
-    slug: "maldives",
+    display: "Maldives",
     code: "MV"
   },
   {
+    country: "Mali",
+    display: "Mali",
+    code: "ML"
+  },
+  {
     country: "Malta",
-    slug: "malta",
+    display: "Malta",
     code: "MT"
   },
   {
     country: "Martinique",
-    slug: "martinique",
+    display: "Martinique",
     code: "MQ"
   },
   {
     country: "Mauritania",
-    slug: "mauritania",
+    display: "Mauritania",
     code: "MR"
   },
   {
     country: "Mauritius",
-    slug: "mauritius",
+    display: "Mauritius",
     code: "MU"
   },
   {
     country: "Mayotte",
-    slug: "mayotte",
+    display: "Mayotte",
     code: "YT"
   },
   {
     country: "Mexico",
-    slug: "mexico",
+    display: "Mexico",
     code: "MX"
   },
   {
     country: "Moldova",
-    slug: "moldova",
+    display: "Moldova",
     code: "MD"
   },
   {
     country: "Monaco",
-    slug: "monaco",
+    display: "Monaco",
     code: "MC"
   },
   {
     country: "Mongolia",
-    slug: "mongolia",
+    display: "Mongolia",
     code: "MN"
   },
   {
     country: "Montenegro",
-    slug: "montenegro",
+    display: "Montenegro",
     code: "ME"
   },
   {
+    country: "Montserrat",
+    display: "Montserrat",
+    code: "MS"
+  },
+  {
     country: "Morocco",
-    slug: "morocco",
+    display: "Morocco",
     code: "MA"
   },
   {
     country: "Mozambique",
-    slug: "mozambique",
+    display: "Mozambique",
     code: "MZ"
   },
   {
+    country: "Myanmar",
+    display: "Myanmar",
+    code: "MM"
+  },
+  {
     country: "Namibia",
-    slug: "namibia",
+    display: "Namibia",
     code: "NA"
   },
   {
     country: "Nepal",
-    slug: "nepal",
+    display: "Nepal",
     code: "NP"
   },
   {
     country: "Netherlands",
-    slug: "netherlands",
+    display: "Netherlands",
     code: "NL"
   },
   {
+    country: "New Caledonia",
+    display: "New Caledonia",
+    code: "NC"
+  },
+  {
     country: "New Zealand",
-    slug: "new-zealand",
+    display: "New Zealand",
     code: "NZ"
   },
   {
     country: "Nicaragua",
-    slug: "nicaragua",
+    display: "Nicaragua",
     code: "NI"
   },
   {
     country: "Niger",
-    slug: "niger",
+    display: "Niger",
     code: "NE"
   },
   {
     country: "Nigeria",
-    slug: "nigeria",
+    display: "Nigeria",
     code: "NG"
   },
   {
-    country: "North Ireland",
-    slug: "north-ireland",
-    code: "GB"
-  },
-  {
     country: "North Macedonia",
-    slug: "north-macedonia",
+    display: "North Macedonia",
     code: "MK"
   },
   {
     country: "Norway",
-    slug: "norway",
+    display: "Norway",
     code: "NO"
   },
   {
-    country: "occupied Palestinian territory",
-    slug: "occupied-palestinian-territory",
-    code: "PS"
-  },
-  {
     country: "Oman",
-    slug: "oman",
+    display: "Oman",
     code: "OM"
   },
   {
-    country: "Others",
-    slug: "others"
-  },
-  {
     country: "Pakistan",
-    slug: "pakistan",
+    display: "Pakistan",
     code: "PK"
   },
   {
     country: "Palestine",
-    slug: "palestine",
+    display: "Palestine",
     code: "PS"
   },
   {
     country: "Panama",
-    slug: "panama",
+    display: "Panama",
     code: "PA"
   },
   {
     country: "Papua New Guinea",
-    slug: "papua-new-guinea",
+    display: "Papua New Guinea",
     code: "PG"
   },
   {
     country: "Paraguay",
-    slug: "paraguay",
+    display: "Paraguay",
     code: "PY"
   },
   {
     country: "Peru",
-    slug: "peru",
+    display: "Peru",
     code: "PE"
   },
   {
     country: "Philippines",
-    slug: "philippines",
+    display: "Philippines",
     code: "PH"
   },
   {
     country: "Poland",
-    slug: "poland",
+    display: "Poland",
     code: "PL"
   },
   {
     country: "Portugal",
-    slug: "portugal",
+    display: "Portugal",
     code: "PT"
   },
   {
-    country: "Puerto Rico",
-    slug: "puerto-rico",
-    code: "PR"
-  },
-  {
     country: "Qatar",
-    slug: "qatar",
+    display: "Qatar",
     code: "QA"
   },
   {
-    country: "Republic of Ireland",
-    slug: "republic-of-ireland",
-    code: "IE"
-  },
-  {
-    country: "Republic of Korea",
-    slug: "republic-of-korea",
-    code: "KR"
-  },
-  {
-    country: "Republic of Moldova",
-    slug: "republic-of-moldova",
-    code: "MD"
-  },
-  {
-    country: "Republic of the Congo",
-    slug: "republic-of-the-congo",
-    code: "CG"
-  },
-  {
-    country: "Reunion",
-    slug: "reunion",
-    code: "RE"
-  },
-  {
     country: "Romania",
-    slug: "romania",
+    display: "Romania",
     code: "RO"
   },
   {
     country: "Russia",
-    slug: "russia",
-    code: "RU"
-  },
-  {
-    country: "Russian Federation",
-    slug: "russian-federation",
+    display: "Russia",
     code: "RU"
   },
   {
     country: "Rwanda",
-    slug: "rwanda",
+    display: "Rwanda",
     code: "RW"
   },
   {
-    country: "Saint Barthelemy",
-    slug: "saint-barthelemy",
-    code: "BL"
+    country: "Réunion",
+    display: "Réunion",
+    code: "RE"
+  },
+  {
+    country: "S. Korea",
+    display: "South Korea",
+    code: "KR"
+  },
+  {
+    country: "Saint Kitts and Nevis",
+    display: "Saint Kitts and Nevis",
+    code: "KN"
   },
   {
     country: "Saint Lucia",
-    slug: "saint-lucia",
+    display: "Saint Lucia",
     code: "LC"
   },
   {
     country: "Saint Martin",
-    slug: "saint-martin",
+    display: "Saint Martin",
     code: "MF"
   },
   {
-    country: "Saint Vincent and the Grenadines",
-    slug: "saint-vincent-and-the-grenadines",
-    code: "VC"
-  },
-  {
     country: "San Marino",
-    slug: "san-marino",
+    display: "San Marino",
     code: "SM"
   },
   {
     country: "Saudi Arabia",
-    slug: "saudi-arabia",
+    display: "Saudi Arabia",
     code: "SA"
   },
   {
     country: "Senegal",
-    slug: "senegal",
+    display: "Senegal",
     code: "SN"
   },
   {
     country: "Serbia",
-    slug: "serbia",
+    display: "Serbia",
     code: "RS"
   },
   {
     country: "Seychelles",
-    slug: "seychelles",
+    display: "Seychelles",
     code: "SC"
   },
   {
     country: "Singapore",
-    slug: "singapore",
+    display: "Singapore",
     code: "SG"
   },
   {
+    country: "Sint Maarten",
+    display: "Sint Maarten",
+    code: "SX"
+  },
+  {
     country: "Slovakia",
-    slug: "slovakia",
+    display: "Slovakia",
     code: "SK"
   },
   {
     country: "Slovenia",
-    slug: "slovenia",
+    display: "Slovenia",
     code: "SI"
   },
   {
     country: "Somalia",
-    slug: "somalia",
+    display: "Somalia",
     code: "SO"
   },
   {
     country: "South Africa",
-    slug: "south-africa",
+    display: "South Africa",
     code: "ZA"
   },
   {
-    country: "South Korea",
-    slug: "south-korea",
-    code: "KR"
-  },
-  {
     country: "Spain",
-    slug: "spain",
+    display: "Spain",
     code: "ES"
   },
   {
     country: "Sri Lanka",
-    slug: "sri-lanka",
+    display: "Sri Lanka",
     code: "LK"
   },
   {
-    country: "St. Martin",
-    slug: "st.-martin",
-    code: "MF"
+    country: "St. Barth",
+    display: "Saint Barthélemy",
+    code: "BL"
+  },
+  {
+    country: "St. Vincent Grenadines",
+    display: "St. Vincent Grenadines",
+    code: "VC"
   },
   {
     country: "Sudan",
-    slug: "sudan",
+    display: "Sudan",
     code: "SD"
   },
   {
     country: "Suriname",
-    slug: "suriname",
+    display: "Suriname",
     code: "SR"
   },
   {
     country: "Sweden",
-    slug: "sweden",
+    display: "Sweden",
     code: "SE"
   },
   {
     country: "Switzerland",
-    slug: "switzerland",
+    display: "Switzerland",
     code: "CH"
   },
   {
     country: "Syria",
-    slug: "syria",
+    display: "Syria",
     code: "SY"
   },
   {
-    country: "Taipei and environs",
-    slug: "taipei-and-environs",
-    code: "TW"
-  },
-  {
     country: "Taiwan",
-    slug: "taiwan",
-    code: "TW"
-  },
-  {
-    country: "Taiwan*",
-    slug: "taiwan",
+    display: "Taiwan",
     code: "TW"
   },
   {
     country: "Tanzania",
-    slug: "tanzania",
+    display: "Tanzania",
     code: "TZ"
   },
   {
     country: "Thailand",
-    slug: "thailand",
+    display: "Thailand",
     code: "TH"
   },
   {
-    country: "The Bahamas",
-    slug: "the-bahamas",
-    code: "BS"
-  },
-  {
-    country: "The Gambia",
-    slug: "the-gambia",
-    code: "GM"
-  },
-  {
     country: "Timor-Leste",
-    slug: "timor-leste",
+    display: "Timor-Leste",
     code: "TL"
   },
   {
     country: "Togo",
-    slug: "togo",
+    display: "Togo",
     code: "TG"
   },
   {
     country: "Trinidad and Tobago",
-    slug: "trinidad-and-tobago",
+    display: "Trinidad and Tobago",
     code: "TT"
   },
   {
     country: "Tunisia",
-    slug: "tunisia",
+    display: "Tunisia",
     code: "TN"
   },
   {
     country: "Turkey",
-    slug: "turkey",
+    display: "Turkey",
     code: "TR"
   },
   {
-    country: "Uganda",
-    slug: "uganda",
-    code: "UG"
+    country: "Turks and Caicos",
+    display: "Turks and Caicos",
+    code: "TC"
   },
   {
-    country: "UK",
-    slug: "uk",
-    code: "GB"
-  },
-  {
-    country: "Ukraine",
-    slug: "ukraine",
-    code: "UA"
-  },
-  {
-    country: "United Arab Emirates",
-    slug: "united-arab-emirates",
+    country: "UAE",
+    display: "United Arab Emirates",
     code: "AE"
   },
   {
-    country: "United Kingdom",
-    slug: "united-kingdom",
+    country: "UK",
+    display: "United Kingdom",
     code: "GB"
   },
   {
-    country: "Uruguay",
-    slug: "uruguay",
-    code: "UY"
-  },
-  {
-    country: "US",
-    slug: "us",
+    country: "USA",
+    display: "United States",
     code: "US"
   },
   {
+    country: "Uganda",
+    display: "Uganda",
+    code: "UG"
+  },
+  {
+    country: "Ukraine",
+    display: "Ukraine",
+    code: "UA"
+  },
+  {
+    country: "Uruguay",
+    display: "Uruguay",
+    code: "UY"
+  },
+  {
     country: "Uzbekistan",
-    slug: "uzbekistan",
+    display: "Uzbekistan",
     code: "UZ"
   },
   {
     country: "Vatican City",
-    slug: "vatican-city",
+    display: "Vatican City",
     code: "VA"
   },
   {
     country: "Venezuela",
-    slug: "venezuela",
+    display: "Venezuela",
     code: "VE"
   },
   {
-    country: "Viet Nam",
-    slug: "viet-nam",
-    code: "VN"
-  },
-  {
     country: "Vietnam",
-    slug: "vietnam",
+    display: "Vietnam",
     code: "VN"
   },
   {
     country: "Zambia",
-    slug: "zambia",
+    display: "Zambia",
     code: "ZM"
   },
   {
     country: "Zimbabwe",
-    slug: "zimbabwe",
+    display: "Zimbabwe",
     code: "ZW"
   }
 ];
@@ -1108,6 +1023,17 @@ export function countrySearchByName(name) {
 
   countries.forEach(function(obj) {
     if (nameFormatted === obj.country.toLowerCase()) {
+      returnedCountryObj = obj;
+    }
+  });
+  return returnedCountryObj;
+}
+
+export function countrySearchByDisplay(display) {
+  var returnedCountryObj = null;
+
+  countries.forEach(function(obj) {
+    if (display.toLowerCase() === obj.display.toLowerCase()) {
       returnedCountryObj = obj;
     }
   });
