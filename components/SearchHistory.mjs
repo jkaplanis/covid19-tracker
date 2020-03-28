@@ -7,11 +7,7 @@ export default function buildSearchHistory() {
   pastSearches.forEach(function(countryObj) {
     var linkEl = $("<a>");
     linkEl.attr("href", `./country.html?country=${countryObj.country}`);
-    if (countryObj.country === "US") {
-      linkEl.text("United States");
-    } else {
-      linkEl.text(countryObj.country);
-    }
+    linkEl.text(countryObj.display);
 
     $("#menuDropdown").append($("<li>").append(linkEl));
   });
