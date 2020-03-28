@@ -16,6 +16,10 @@ At the top of the homepage users can search for any country. When the desired co
 
 ![](./assets/images/covid19-search.gif)
 
+When hamburger icon is clicked, the user will find a list of recent searches which can be clicked to navigate to that country specific page again. When the Home button is clicked the user will be returned to the home page.
+
+![](./assets/images/covid19-search-history.gif)
+
 ## Contributors
 
 Ryan Harris  
