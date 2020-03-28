@@ -42,7 +42,7 @@ function renderTopCountryList() {
       // dynamically generate list items on main page
       countries.forEach(function(country) {
         var btnLink = $("<a>");
-        btnLink.attr("href", `./country.html?country=${country.country_name}`);
+        btnLink.attr("href", `country.html?country=${country.country_name}`);
         btnLink.attr(
           "class",
           "uk-button uk-width-1-1 uk-column-1-2 stat-number-small uk-padding-remove uk-margin-small"
@@ -128,7 +128,7 @@ function buildCountrySearchDropdown(countryArray) {
     let elements = countryArray.map(function(obj) {
       let countryLiEl = $("<li>");
       let linkEl = $("<a>");
-      linkEl.attr("href", `./country.html?country=${obj.country}`);
+      linkEl.attr("href", `country.html?country=${obj.country}`);
       linkEl.attr("data-country-name", obj.country);
       linkEl.text(obj.display);
       countryLiEl.append(linkEl);
@@ -174,7 +174,7 @@ function navigateToCountryPageOnSubmit(event) {
 
   if (returnedCountryData) {
     addSearchToLocalStorage(returnedCountryData);
-    window.location.href = `./country.html?country=${returnedCountryData.country}`;
+    window.location.href = `country.html?country=${returnedCountryData.country}`;
   }
 }
 
