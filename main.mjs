@@ -1,11 +1,7 @@
-import { getTrendingNews, getRegionNews } from "./logic/newsAPI.mjs";
+import { getTrendingNews } from "./logic/newsAPI.mjs";
+import { getTopCountryData, getWorldData } from "./logic/covid-api-calls.mjs";
 import {
-  getTopCountryData,
-  getSpecificCountryData,
-  getWorldData
-} from "./logic/covid-api-calls.mjs";
-import {
-  countrySearchByCode,
+  countrySearchByDisplay,
   countrySearchByName,
   countries
 } from "./data/countries.mjs";
@@ -30,9 +26,9 @@ function init() {
 function renderWorldData() {
   getWorldData()
     .then(function(totals) {
-      $("#totalCasesWorld").text(totals.confirmed.toLocaleString());
-      $("#totalRecoveredWorld").text(totals.recovered.toLocaleString());
-      $("#totalDeathsWorld").text(totals.deaths.toLocaleString());
+      $("#totalCasesWorld").text(totals.confirmed);
+      $("#totalRecoveredWorld").text(totals.recovered);
+      $("#totalDeathsWorld").text(totals.deaths);
     })
     .catch(function(error) {
       console.log(error);
@@ -46,28 +42,22 @@ function renderTopCountryList() {
       // dynamically generate list items on main page
       countries.forEach(function(country) {
         var btnLink = $("<a>");
-        btnLink.attr("href", `/country.html?country=${country.Country}`);
+        btnLink.attr("href", `/country.html?country=${country.country_name}`);
         btnLink.attr(
           "class",
           "uk-button uk-width-1-1 uk-column-1-2 stat-number-small uk-padding-remove uk-margin-small"
         );
 
-        var countryName = $("<p>");
-        countryName.attr("class", "uk-margin-remove uk-text-right");
-        if (country.Country === "US") {
-          countryName.text("United States");
-        } else {
-          countryName.text(country.Country);
-        }
+        var countryNameEl = $("<p>");
+        countryNameEl.attr("class", "uk-margin-remove uk-text-right");
+        var countryObj = countrySearchByName(country.country_name);
+        countryNameEl.text(countryObj.display);
 
         var totalCases = $("<p>");
-        totalCases.attr(
-          "class",
-          "uk-margin-remove uk-text-left text-red uk-text-bold"
-        );
-        totalCases.text(parseInt(country.TotalConfirmed).toLocaleString());
+        totalCases.attr("class", "uk-margin-remove uk-text-left text-red");
+        totalCases.text(country.cases);
 
-        btnLink.append(countryName, totalCases);
+        btnLink.append(countryNameEl, totalCases);
 
         $("#countryListData").append(btnLink);
       });
@@ -122,7 +112,7 @@ function countrySearchInputHandler(event) {
     countries.forEach(function(obj) {
       inputValue.replace(/\\/g, "");
       let regexp = new RegExp(`${inputValue}`, "gi");
-      if (regexp.test(obj.country)) {
+      if (regexp.test(obj.display)) {
         results.push(obj);
       }
     });
@@ -140,7 +130,7 @@ function buildCountrySearchDropdown(countryArray) {
       let linkEl = $("<a>");
       linkEl.attr("href", `/country.html?country=${obj.country}`);
       linkEl.attr("data-country-name", obj.country);
-      linkEl.text(obj.country);
+      linkEl.text(obj.display);
       countryLiEl.append(linkEl);
       linkEl.on("mousedown", navigateToCountryPage);
 
@@ -177,9 +167,10 @@ function navigateToCountryPage(event) {
 }
 
 function navigateToCountryPageOnSubmit(event) {
+  event.preventDefault();
   let inputValue = $(".uk-input").val();
 
-  let returnedCountryData = countrySearchByName(inputValue);
+  let returnedCountryData = countrySearchByDisplay(inputValue);
 
   if (returnedCountryData) {
     addSearchToLocalStorage(returnedCountryData);

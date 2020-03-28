@@ -1,4 +1,13 @@
-let SUMMARY_QUERY_URL = "https://api.covid19api.com/summary";
+const WORLD_TOTAL_QUERY_URL =
+  "https://coronavirus-monitor.p.rapidapi.com/coronavirus/worldstat.php";
+const ALL_COUNTRIES_QUERY_URL =
+  "https://coronavirus-monitor.p.rapidapi.com/coronavirus/cases_by_country.php";
+const COUNTRY_QUERY_URL =
+  "https://coronavirus-monitor.p.rapidapi.com/coronavirus/latest_stat_by_country.php?country=";
+const QUERY_HEADER = {
+  "x-rapidapi-host": "coronavirus-monitor.p.rapidapi.com",
+  "x-rapidapi-key": "d2059fb63amsh27a7892ac6cfd8fp15d375jsnf602b99abdd0"
+};
 
 /**
  * @param {num} numOfCountries number of countries to return
@@ -7,13 +16,18 @@ let SUMMARY_QUERY_URL = "https://api.covid19api.com/summary";
  */
 export async function getTopCountryData(numOfCountries) {
   if (numOfCountries) {
-    const response = await $.ajax({
-      url: SUMMARY_QUERY_URL,
-      method: "GET"
+    let response = await $.ajax({
+      url: ALL_COUNTRIES_QUERY_URL,
+      method: "GET",
+      headers: QUERY_HEADER
     });
 
-    response.Countries.sort(_sortCountries);
-    return response.Countries.slice(0, numOfCountries);
+    if (typeof response === "string") {
+      response = JSON.parse(response);
+    }
+
+    response.countries_stat.sort(_sortCountries);
+    return response.countries_stat.slice(0, numOfCountries);
   } else {
     throw new Error("Must pass a number for number of countries");
   }
@@ -25,47 +39,41 @@ export async function getTopCountryData(numOfCountries) {
  * return data for specific country
  */
 export async function getSpecificCountryData(countryName) {
-  const response = await $.ajax({
-    url: SUMMARY_QUERY_URL,
-    method: "GET"
+  var response = await $.ajax({
+    url: COUNTRY_QUERY_URL + countryName,
+    method: "GET",
+    headers: QUERY_HEADER
   });
 
-  var returnedCountryObj = null;
-  response.Countries.forEach(function(obj) {
-    if (countryName.toLowerCase() === obj.Country.toLowerCase()) {
-      returnedCountryObj = obj;
-    }
-  });
+  if (typeof response === "string") {
+    response = JSON.parse(response);
+  }
 
-  return returnedCountryObj;
+  return response.latest_stat_by_country[0];
 }
 
 export async function getWorldData() {
-  const response = await $.ajax({
-    url: SUMMARY_QUERY_URL,
-    method: "GET"
+  let response = await $.ajax({
+    url: WORLD_TOTAL_QUERY_URL,
+    method: "GET",
+    headers: QUERY_HEADER
   });
 
-  var confirmed = 0;
-  var recovered = 0;
-  var deaths = 0;
-  response.Countries.forEach(function(country) {
-    confirmed += country.TotalConfirmed;
-    recovered += country.TotalRecovered;
-    deaths += country.TotalDeaths;
-  });
+  if (typeof response === "string") {
+    response = JSON.parse(response);
+  }
 
   return {
-    confirmed: confirmed,
-    recovered: recovered,
-    deaths: deaths
+    confirmed: response.total_cases,
+    recovered: response.total_recovered,
+    deaths: response.total_deaths
   };
 }
 
 // INTERNAL LOGIC
 function _sortCountries(firstCountry, secondCountry) {
-  var first = parseInt(firstCountry.TotalConfirmed);
-  var second = parseInt(secondCountry.TotalConfirmed);
+  var first = parseInt(firstCountry.cases.replace(/,/g, ""));
+  var second = parseInt(secondCountry.cases.replace(/,/g, ""));
   // logic for determining top countries
   if (first > second) {
     return -1;
