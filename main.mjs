@@ -77,9 +77,6 @@ function renderTopCountryList() {
       nameCell.append(countryLinkEl);
       rowEl.append(nameCell);
 
-      // cellCountryName.append(countryLinkEl);
-      // rowEl.append(cellCountryName);
-
       rowEl.append(
         $("<td>")
           .text(country.deaths)
