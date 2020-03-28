@@ -179,19 +179,18 @@ function navigateToCountryPageOnSubmit(event) {
 }
 
 function addSearchToLocalStorage(countryObj) {
-  let pastSearches = localStorage.getItem("covid-app");
-  if (pastSearches) {
-    pastSearches = JSON.parse(pastSearches);
-  } else {
+  let pastSearches = JSON.parse(localStorage.getItem("covid-app"));
+  if (!pastSearches) {
     pastSearches = [];
   }
 
-  let alreadyContainsCountry = pastSearches.filter(obj => {
-    return obj.country.toLowerCase() === countryObj.country.toLowerCase();
+  var index = array.findIndex(function(element) {
+    return countryObj.country === element.country;
   });
 
-  if (alreadyContainsCountry.length === 0) {
-    pastSearches.push(countryObj);
-    localStorage.setItem("covid-app", JSON.stringify(pastSearches));
+  if (index !== -1) {
+    pastSearches.splice(index, 1);
   }
+  pastSearches.unshift(countryObj);
+  localStorage.setItem("covid-app", JSON.stringify(pastSearches));
 }
