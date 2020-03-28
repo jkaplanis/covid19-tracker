@@ -14,7 +14,7 @@ $(init);
 function init() {
   renderWorldData();
   renderTopCountryList();
-  // renderTrendingNewsList();
+  renderTrendingNewsList();
 
   // Country search input specific event listener setup
   countryInputEventListenerInitialization();
