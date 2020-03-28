@@ -65,12 +65,20 @@ function renderTopCountryList() {
         .css("text-align", "right")
         .text(country.cases);
 
-      rowEl.append(
-        $("<td>")
-          .text(country.country_name)
-          .css("text-align", "center")
-          .css("padding", "0px 30px")
-      );
+      let nameCell = $("<td>")
+        .css("text-align", "center")
+        .css("padding", "0px 30px");
+
+      let countryLinkEl = $("<a>")
+        .attr("href", `./country.html?country=${country.country_name}`)
+        .addClass("text-white")
+        .text(countrySearchByName(country.country_name).display);
+
+      nameCell.append(countryLinkEl);
+      rowEl.append(nameCell);
+
+      // cellCountryName.append(countryLinkEl);
+      // rowEl.append(cellCountryName);
 
       rowEl.append(
         $("<td>")
