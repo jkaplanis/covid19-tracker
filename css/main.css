@@ -11984,6 +11984,14 @@ footer {
   font-size: large;
 }
 
+.stat-span-small {
+  font-size: 16px;
+}
+
+.stat-number-small {
+  margin-top: 40px;
+}
+
 .uk-button {
   text-transform: none;
   line-height: normal;
