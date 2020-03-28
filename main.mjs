@@ -26,9 +26,21 @@ function init() {
 function renderWorldData() {
   getWorldData()
     .then(function(totals) {
-      $("#totalCasesWorld").text(totals.confirmed);
+      $("#totalCasesWorld")
+        .text(totals.confirmed)
+        .append(
+          $("<span>")
+            .addClass("stat-span-small text-red uk-margin-small-left")
+            .text("+" + totals.newConfirmed)
+        );
       $("#totalRecoveredWorld").text(totals.recovered);
-      $("#totalDeathsWorld").text(totals.deaths);
+      $("#totalDeathsWorld")
+        .text(totals.deaths)
+        .append(
+          $("<span>")
+            .addClass("stat-span-small text-red uk-margin-small-left")
+            .text("+" + totals.newDeaths)
+        );
     })
     .catch(function(error) {
       console.log(error);
