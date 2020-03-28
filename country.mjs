@@ -1,10 +1,6 @@
 import { getRegionNews } from "./logic/newsAPI.mjs";
 import { getSpecificCountryData } from "./logic/covid-api-calls.mjs";
-import {
-  countrySearchByCode,
-  countrySearchByName,
-  countries
-} from "./data/countries.mjs";
+import { countrySearchByName } from "./data/countries.mjs";
 import NewsElement from "./components/NewsElement.mjs";
 import SearchHistory from "./components/SearchHistory.mjs";
 
@@ -15,40 +11,50 @@ function init() {
   let countryName = urlParams.get("country");
   let countryObj = countrySearchByName(countryName);
   buildNewsArticles(countryObj);
-  renderSpecificCountryName(countryName);
+  renderSpecificCountryName(countryObj.display);
+  renderSpecificCountryData(countryObj.country);
 
   SearchHistory();
 }
 
-function renderSpecificCountryName(countryName) {
-  if (countryName === "US") {
-    $("#specificCountryName").text("United States");
-    renderSpecificCountryData(countryName);
-  } else {
-    $("#specificCountryName").text(countryName);
-    renderSpecificCountryData(countryName);
-  }
+function renderSpecificCountryName(displayName) {
+  $("#specificCountryName").text(displayName);
 }
 
 function renderSpecificCountryData(countryName) {
   getSpecificCountryData(countryName).then(function(countryDataObj) {
-    // $("#specificCountryName").text(countryDataObj.Country);
-    $("#totalCasesCountry").text(
-      countryDataObj.TotalConfirmed.toLocaleString()
-    );
-    $("#newCasesCountry").text(
-      "+" + countryDataObj.NewConfirmed.toLocaleString()
-    );
-    $("#totalDeathsCountry").text(countryDataObj.TotalDeaths.toLocaleString());
-    $("#newDeathsCountry").text(
-      "+" + countryDataObj.NewDeaths.toLocaleString()
-    );
-    $("#totalRecoveredCountry").text(
-      countryDataObj.TotalRecovered.toLocaleString()
-    );
-    $("#newRecoveredCountry").text(
-      "+" + countryDataObj.NewRecovered.toLocaleString()
-    );
+    // total cases
+    $("#totalCasesCountry")
+      .text(countryDataObj.total_cases)
+      .append(
+        $("<span>")
+          .addClass("stat-span-small text-red uk-margin-small-left")
+          .text(`+${countryDataObj.new_cases}`)
+      );
+
+    // active cases
+    $("#activeCases").text(countryDataObj.active_cases);
+
+    // cases per 1 million
+    $("#casePerOneM").text(countryDataObj.total_cases_per1m);
+
+    // total deaths
+    $("#totalDeathsCountry")
+      .text(countryDataObj.total_deaths)
+      .append(
+        $("<span>")
+          .addClass("stat-span-small text-red uk-margin-small-left")
+          .text(`+${countryDataObj.new_deaths}`)
+      );
+
+    // critical condition cases
+    $("#criticalCases").text(countryDataObj.serious_critical);
+
+    // recovered cases
+    $("#recoveredCases")
+      .append("<p>")
+      .addClass("text-green")
+      .text(countryDataObj.total_recovered);
   });
 }
 
