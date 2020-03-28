@@ -66,7 +66,9 @@ export async function getWorldData() {
   return {
     confirmed: response.total_cases,
     recovered: response.total_recovered,
-    deaths: response.total_deaths
+    deaths: response.total_deaths,
+    newConfirmed: response.new_cases,
+    newDeaths: response.new_deaths
   };
 }
 
