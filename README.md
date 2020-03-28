@@ -8,6 +8,14 @@ The COVID-19 app produces accurate data on COVID-19 confirmed cases, deaths, and
 
 ## Usage
 
+The homepage contains data for worldwide cases and trending news related to COVID-19.
+
+![](./assets/images/covid19-homepage.gif)
+
+At the top of the homepage users can search for any country. When the desired country name is clicked the user is redirected to the country specific page where they can view current stats and trending news for that country.
+
+![](./assets/images/covid19-search.gif)
+
 ## Contributors
 
 Ryan Harris  
