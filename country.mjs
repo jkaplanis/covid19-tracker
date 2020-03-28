@@ -3,6 +3,7 @@ import { getSpecificCountryData } from "./logic/covid-api-calls.mjs";
 import { countrySearchByName } from "./data/countries.mjs";
 import NewsElement from "./components/NewsElement.mjs";
 import SearchHistory from "./components/SearchHistory.mjs";
+import CountrySearchElement from "./components/CountrySearchInput.mjs";
 
 $(init);
 
@@ -15,6 +16,9 @@ function init() {
   renderSpecificCountryData(countryObj.country);
 
   SearchHistory();
+
+  // Build the country search input
+  CountrySearchElement();
 }
 
 function renderSpecificCountryName(displayName) {
