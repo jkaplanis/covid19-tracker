@@ -48,35 +48,44 @@ function renderWorldData() {
 }
 
 function renderTopCountryList() {
-  getTopCountryData(10)
-    .then(function(countries) {
-      $("#countryListData").empty();
-      // dynamically generate list items on main page
-      countries.forEach(function(country) {
-        var btnLink = $("<a>");
-        btnLink.attr("href", `./country.html?country=${country.country_name}`);
-        btnLink.attr(
-          "class",
-          "uk-button uk-width-1-1 uk-column-1-2 stat-number-small uk-padding-remove uk-margin-small"
-        );
+  getTopCountryData(10).then(function(countries) {
+    let table = $("#countryDataTable");
+    let tableBody = $("#countryDataTable tbody");
 
-        var countryNameEl = $("<p>");
-        countryNameEl.attr("class", "uk-margin-remove uk-text-right");
-        var countryObj = countrySearchByName(country.country_name);
-        countryNameEl.text(countryObj.display);
+    table.css("border-collapse", "seperate");
+    table.css("border-spacing", "0 10px");
 
-        var totalCases = $("<p>");
-        totalCases.attr("class", "uk-margin-remove uk-text-left text-red");
-        totalCases.text(country.cases);
+    table.css("margin", "auto");
 
-        btnLink.append(countryNameEl, totalCases);
+    countries.forEach(function(country) {
+      let rowEl = $("<tr>");
 
-        $("#countryListData").append(btnLink);
-      });
-    })
-    .catch(function(error) {
-      console.log(error);
+      rowEl
+        .append($("<td>"))
+        .css("text-align", "right")
+        .text(country.cases);
+
+      let nameCell = $("<td>")
+        .css("text-align", "center")
+        .css("padding", "0px 30px");
+
+      let countryLinkEl = $("<a>")
+        .attr("href", `./country.html?country=${country.country_name}`)
+        .addClass("text-white")
+        .text(countrySearchByName(country.country_name).display);
+
+      nameCell.append(countryLinkEl);
+      rowEl.append(nameCell);
+
+      rowEl.append(
+        $("<td>")
+          .text(country.deaths)
+          .css("text-align", "left")
+          .addClass("text-red")
+      );
+      tableBody.append(rowEl);
     });
+  });
 }
 
 function renderTrendingNewsList() {

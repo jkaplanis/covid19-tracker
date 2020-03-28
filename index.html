@@ -71,7 +71,7 @@
         class="card uk-box-shadow-large uk-flex-column uk-text-center uk-padding-small uk-margin"
       >
         <div class="text-white">
-          <h3 class="uk-margin-small uk-text-muted">Total Confirmed Cases</h3>
+          <h3 class="uk-margin-small">Total Confirmed Cases</h3>
           <p class="uk-margin-small stat-number-large" id="totalCasesWorld">
             -
           </p>
@@ -94,8 +94,29 @@
       <section
         class="card uk-flex-column uk-box-shadow-larges uk-padding-small uk-margin text-white"
       >
-        <h3 class="uk-text-center uk-text-muted">Top 10 Countries</h3>
-        <div id="countryListData"></div>
+        <h3 class="uk-text-center text-white">Top 10 Countries</h3>
+        <table id="countryDataTable">
+          <tbody>
+            <tr>
+              <th style="text-align: right;">
+                <h4 class="uk-text-muted" style="margin-bottom: 0px;">Cases</h4>
+              </th>
+              <th>
+                <h4 class="uk-text-muted" style="margin-bottom: 0px;">
+                  Country
+                </h4>
+              </th>
+              <th>
+                <h4
+                  style="text-align: left; margin-bottom: 0px;"
+                  class="uk-text-muted"
+                >
+                  Deaths
+                </h4>
+              </th>
+            </tr>
+          </tbody>
+        </table>
       </section>
       <!-- Trending world news -->
       <section
