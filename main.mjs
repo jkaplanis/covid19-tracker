@@ -200,7 +200,7 @@ function addSearchToLocalStorage(countryObj) {
   });
 
   if (alreadyContainsCountry.length === 0) {
-    pastSearches.push(countryObj);
+    pastSearches.unshift(countryObj);
     localStorage.setItem("covid-app", JSON.stringify(pastSearches));
   }
 }
