@@ -184,7 +184,7 @@ function addSearchToLocalStorage(countryObj) {
     pastSearches = [];
   }
 
-  var index = array.findIndex(function(element) {
+  var index = pastSearches.findIndex(function(element) {
     return countryObj.country === element.country;
   });
 
