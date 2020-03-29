@@ -13,14 +13,19 @@ import CountrySearchElement from "./components/CountrySearchInput.mjs";
 $(init);
 
 function init() {
-  renderWorldData();
-  renderTopCountryList();
+  renderData();
+  setInterval(renderData, 600000);
   renderTrendingNewsList();
 
   // Build the country search input
   CountrySearchElement();
 
   SearchHistory();
+}
+
+function renderData() {
+  renderWorldData();
+  renderTopCountryList();
 }
 
 function renderWorldData() {
@@ -50,7 +55,7 @@ function renderWorldData() {
 function renderTopCountryList() {
   getTopCountryData(10).then(function(countries) {
     let table = $("#countryDataTable");
-    let tableBody = $("#countryDataTable tbody");
+    let countryRows = $("#countryRows").empty();
 
     table.css("border-collapse", "seperate");
     table.css("border-spacing", "0 10px");
@@ -83,7 +88,7 @@ function renderTopCountryList() {
           .css("text-align", "left")
           .addClass("text-red")
       );
-      tableBody.append(rowEl);
+      countryRows.append(rowEl);
     });
   });
 }
