@@ -14,6 +14,10 @@ function init() {
   buildNewsArticles(countryObj);
   renderSpecificCountryName(countryObj.display);
   renderSpecificCountryData(countryObj.country);
+  renderSpecificCountryData(countryObj.country);
+  setInterval(function() {
+    renderSpecificCountryData(countryObj.country);
+  }, 600000);
 
   SearchHistory();
 
