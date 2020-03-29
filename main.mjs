@@ -31,7 +31,7 @@ function renderWorldData() {
         .append(
           $("<span>")
             .addClass("stat-span-small text-red uk-margin-small-left")
-            .text("+" + totals.newConfirmed)
+            .text(totals.newConfirmed === "" ? "" : "+" + totals.newConfirmed)
         );
       $("#totalRecoveredWorld").text(totals.recovered);
       $("#totalDeathsWorld")
@@ -39,7 +39,7 @@ function renderWorldData() {
         .append(
           $("<span>")
             .addClass("stat-span-small text-red uk-margin-small-left")
-            .text("+" + totals.newDeaths)
+            .text(totals.newDeaths === "" ? "" : "+" + totals.newDeaths)
         );
     })
     .catch(function(error) {

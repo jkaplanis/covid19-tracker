@@ -33,7 +33,11 @@ function renderSpecificCountryData(countryName) {
       .append(
         $("<span>")
           .addClass("stat-span-small text-red uk-margin-small-left")
-          .text(`+${countryDataObj.new_cases}`)
+          .text(
+            countryDataObj.new_cases === ""
+              ? ""
+              : "+" + countryDataObj.new_cases
+          )
       );
 
     // active cases
@@ -48,7 +52,11 @@ function renderSpecificCountryData(countryName) {
       .append(
         $("<span>")
           .addClass("stat-span-small text-red uk-margin-small-left")
-          .text(`+${countryDataObj.new_deaths}`)
+          .text(
+            countryDataObj.new_deaths === ""
+              ? ""
+              : "+" + countryDataObj.new_deaths
+          )
       );
 
     // critical condition cases
