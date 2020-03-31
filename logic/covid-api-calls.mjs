@@ -1,9 +1,9 @@
 const WORLD_TOTAL_QUERY_URL =
-  "https://coronavirus-monitor.p.rapidapi.com/coronavirus/worldstat.php";
+  "https://coronavirus-monitor.p.rapidapi.com/coronavirus/world_total_stat.php";
 const ALL_COUNTRIES_QUERY_URL =
   "https://coronavirus-monitor.p.rapidapi.com/coronavirus/cases_by_country.php";
 const COUNTRY_QUERY_URL =
-  "https://coronavirus-monitor.p.rapidapi.com/coronavirus/latest_stat_by_country.php?country=";
+  "https://coronavirus-monitor.p.rapidapi.com/coronavirus/latest_stat_by_country_name.php?country=";
 const QUERY_HEADER = {
   "x-rapidapi-host": "coronavirus-monitor.p.rapidapi.com",
   "x-rapidapi-key": "d2059fb63amsh27a7892ac6cfd8fp15d375jsnf602b99abdd0"
