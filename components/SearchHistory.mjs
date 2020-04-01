@@ -4,11 +4,13 @@ export default function buildSearchHistory() {
     pastSearches = [];
   }
 
-  pastSearches.forEach(function(countryObj) {
-    var linkEl = $("<a>");
-    linkEl.attr("href", `./country.html?country=${countryObj.country}`);
-    linkEl.text(countryObj.display);
+  pastSearches.forEach(function(countryObj, index) {
+    if (index < 5) {
+      var linkEl = $("<a>");
+      linkEl.attr("href", `./country.html?country=${countryObj.country}`);
+      linkEl.text(countryObj.display);
 
-    $("#menuDropdown").append($("<li>").append(linkEl));
+      $("#menuDropdown").append($("<li>").append(linkEl));
+    }
   });
 }
