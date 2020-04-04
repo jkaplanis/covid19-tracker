@@ -53,14 +53,8 @@ export async function getSpecificCountryData(countryName) {
 }
 
 export async function getWorldData() {
-  // world total API call broken (reports twice as many cases because "World" is counted as a country)
-  // let response = await $.ajax({
-  //   url: WORLD_TOTAL_QUERY_URL,
-  //   method: "GET",
-  //   headers: QUERY_HEADER
-  // });
   let response = await $.ajax({
-    url: COUNTRY_QUERY_URL + "World",
+    url: WORLD_TOTAL_QUERY_URL,
     method: "GET",
     headers: QUERY_HEADER
   });
@@ -69,14 +63,12 @@ export async function getWorldData() {
     response = JSON.parse(response);
   }
 
-  const data = response.latest_stat_by_country[0];
-
   return {
-    confirmed: data.total_cases,
-    recovered: data.total_recovered,
-    deaths: data.total_deaths,
-    newConfirmed: data.new_cases,
-    newDeaths: data.new_deaths
+    confirmed: response.total_cases,
+    recovered: response.total_recovered,
+    deaths: response.total_deaths,
+    newConfirmed: response.new_cases,
+    newDeaths: response.new_deaths
   };
 }
 
