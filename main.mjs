@@ -30,7 +30,7 @@ function renderData() {
 
 function renderWorldData() {
   getWorldData()
-    .then(function(totals) {
+    .then(function (totals) {
       $("#totalCasesWorld")
         .text(totals.confirmed)
         .append(
@@ -47,13 +47,13 @@ function renderWorldData() {
             .text(totals.newDeaths === "" ? "" : "+" + totals.newDeaths)
         );
     })
-    .catch(function(error) {
+    .catch(function (error) {
       console.log(error);
     });
 }
 
 function renderTopCountryList() {
-  getTopCountryData(10).then(function(countries) {
+  getTopCountryData(10).then(function (countries) {
     let table = $("#countryDataTable");
     let countryRows = $("#countryRows").empty();
 
@@ -62,13 +62,10 @@ function renderTopCountryList() {
 
     table.css("margin", "auto");
 
-    countries.forEach(function(country) {
+    countries.forEach(function (country) {
       let rowEl = $("<tr>");
 
-      rowEl
-        .append($("<td>"))
-        .css("text-align", "right")
-        .text(country.cases);
+      rowEl.append($("<td>")).css("text-align", "right").text(country.cases);
 
       let nameCell = $("<td>")
         .css("text-align", "center")
@@ -95,11 +92,11 @@ function renderTopCountryList() {
 
 function renderTrendingNewsList() {
   getTrendingNews(5)
-    .then(function(data) {
+    .then(function (data) {
       $("world-news").append(NewsElement(data));
     })
 
-    .catch(function(error) {
+    .catch(function (error) {
       console.log(error);
     });
 }
