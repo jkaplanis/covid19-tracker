@@ -39,7 +39,7 @@ export async function getTopCountryData(numOfCountries) {
  * return data for specific country
  */
 export async function getSpecificCountryData(countryName) {
-  var response = await $.ajax({
+  let response = await $.ajax({
     url: COUNTRY_QUERY_URL + countryName,
     method: "GET",
     headers: QUERY_HEADER
@@ -53,8 +53,14 @@ export async function getSpecificCountryData(countryName) {
 }
 
 export async function getWorldData() {
+  // world total API call broken (reports twice as many cases because "World" is counted as a country)
+  // let response = await $.ajax({
+  //   url: WORLD_TOTAL_QUERY_URL,
+  //   method: "GET",
+  //   headers: QUERY_HEADER
+  // });
   let response = await $.ajax({
-    url: WORLD_TOTAL_QUERY_URL,
+    url: COUNTRY_QUERY_URL + "World",
     method: "GET",
     headers: QUERY_HEADER
   });
@@ -63,12 +69,14 @@ export async function getWorldData() {
     response = JSON.parse(response);
   }
 
+  const data = response.latest_stat_by_country[0];
+
   return {
-    confirmed: response.total_cases,
-    recovered: response.total_recovered,
-    deaths: response.total_deaths,
-    newConfirmed: response.new_cases,
-    newDeaths: response.new_deaths
+    confirmed: data.total_cases,
+    recovered: data.total_recovered,
+    deaths: data.total_deaths,
+    newConfirmed: data.new_cases,
+    newDeaths: data.new_deaths
   };
 }
 
@@ -76,6 +84,13 @@ export async function getWorldData() {
 function _sortCountries(firstCountry, secondCountry) {
   var first = parseInt(firstCountry.cases.replace(/,/g, ""));
   var second = parseInt(secondCountry.cases.replace(/,/g, ""));
+  // exclude "World" (sort to bottom of list)
+  if (firstCountry.country_name === "World") {
+    return 1;
+  } else if (secondCountry.country_name === "World") {
+    return -1;
+  }
+
   // logic for determining top countries
   if (first > second) {
     return -1;
