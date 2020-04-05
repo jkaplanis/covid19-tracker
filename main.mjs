@@ -13,16 +13,14 @@ function init() {
   // Renders top country and world data UI
   renderData();
 
-  setInterval(renderData, 600000);
+  // Render the search history in the menu
+  SearchHistory();
 
-  // Render trending news
-  // renderTrendingNewsList();
-
-  // Build the country search input
+  // Render the search element
   CountrySearchElement();
 
-  // Build Search History
-  SearchHistory();
+  // Every 10 mins re-fetch and build top country and world data
+  setInterval(renderData, 600000);
 }
 
 function renderData() {
