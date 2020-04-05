@@ -39,7 +39,7 @@ export async function getTopCountryData(numOfCountries) {
  * return data for specific country
  */
 export async function getSpecificCountryData(countryName) {
-  var response = await $.ajax({
+  let response = await $.ajax({
     url: COUNTRY_QUERY_URL + countryName,
     method: "GET",
     headers: QUERY_HEADER
@@ -76,6 +76,13 @@ export async function getWorldData() {
 function _sortCountries(firstCountry, secondCountry) {
   var first = parseInt(firstCountry.cases.replace(/,/g, ""));
   var second = parseInt(secondCountry.cases.replace(/,/g, ""));
+  // exclude "World" (sort to bottom of list)
+  if (firstCountry.country_name === "World") {
+    return 1;
+  } else if (secondCountry.country_name === "World") {
+    return -1;
+  }
+
   // logic for determining top countries
   if (first > second) {
     return -1;
