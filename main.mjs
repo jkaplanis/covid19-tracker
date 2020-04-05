@@ -1,26 +1,29 @@
 import { getTrendingNews } from "./logic/newsAPI.mjs";
 import { getTopCountryData, getWorldData } from "./logic/covid-api-calls.mjs";
-import {
-  countrySearchByDisplay,
-  countrySearchByName,
-  countries
-} from "./data/countries.mjs";
 import NewsElement from "./components/NewsElement.mjs";
 import SearchHistory from "./components/SearchHistory.mjs";
 import CountrySearchElement from "./components/CountrySearchInput.mjs";
+import TopCountryListElement from "./components/TopCountryList.mjs";
+import WorldDataElement from "./components/WorldData.mjs";
 
 // Start the app logic
 $(init);
 
 function init() {
-  renderData();
-  setInterval(renderData, 600000);
+  // Render trending news articles
   renderTrendingNewsList();
 
-  // Build the country search input
+  // Renders top country and world data UI
+  renderData();
+
+  // Render the search history in the menu
+  SearchHistory();
+
+  // Render the search element
   CountrySearchElement();
 
-  SearchHistory();
+  // Every 10 mins re-fetch and build top country and world data
+  setInterval(renderData, 600000);
 }
 
 function renderData() {
@@ -30,64 +33,14 @@ function renderData() {
 
 function renderWorldData() {
   getWorldData()
-    .then(function (totals) {
-      $("#totalCasesWorld")
-        .text(totals.confirmed)
-        .append(
-          $("<span>")
-            .addClass("stat-span-small text-red uk-margin-small-left")
-            .text(totals.newConfirmed === "" ? "" : "+" + totals.newConfirmed)
-        );
-      $("#totalRecoveredWorld").text(totals.recovered);
-      $("#totalDeathsWorld")
-        .text(totals.deaths)
-        .append(
-          $("<span>")
-            .addClass("stat-span-small text-red uk-margin-small-left")
-            .text(totals.newDeaths === "" ? "" : "+" + totals.newDeaths)
-        );
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
+    .then((totals) => WorldDataElement(totals))
+    .catch((err) => console.log("Error getting world data. ", err));
 }
 
 function renderTopCountryList() {
-  getTopCountryData(10).then(function (countries) {
-    let table = $("#countryDataTable");
-    let countryRows = $("#countryRows").empty();
-
-    table.css("border-collapse", "seperate");
-    table.css("border-spacing", "0 10px");
-
-    table.css("margin", "auto");
-
-    countries.forEach(function (country) {
-      let rowEl = $("<tr>");
-
-      rowEl.append($("<td>")).css("text-align", "right").text(country.cases);
-
-      let nameCell = $("<td>")
-        .css("text-align", "center")
-        .css("padding", "0px 30px");
-
-      let countryLinkEl = $("<a>")
-        .attr("href", `./country.html?country=${country.country_name}`)
-        .addClass("text-white")
-        .text(countrySearchByName(country.country_name).display);
-
-      nameCell.append(countryLinkEl);
-      rowEl.append(nameCell);
-
-      rowEl.append(
-        $("<td>")
-          .text(country.deaths)
-          .css("text-align", "left")
-          .addClass("text-red")
-      );
-      countryRows.append(rowEl);
-    });
-  });
+  getTopCountryData(10)
+    .then((data) => TopCountryListElement(data))
+    .catch((err) => console.log("Error fetching top country data", err));
 }
 
 function renderTrendingNewsList() {
