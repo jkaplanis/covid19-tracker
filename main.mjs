@@ -1,10 +1,5 @@
 import { getTrendingNews } from "./logic/newsAPI.mjs";
 import { getTopCountryData, getWorldData } from "./logic/covid-api-calls.mjs";
-import {
-  countrySearchByDisplay,
-  countrySearchByName,
-  countries,
-} from "./data/countries.mjs";
 import NewsElement from "./components/NewsElement.mjs";
 import SearchHistory from "./components/SearchHistory.mjs";
 import CountrySearchElement from "./components/CountrySearchInput.mjs";
