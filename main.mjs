@@ -11,7 +11,7 @@ $(init);
 
 function init() {
   // Render trending news articles
-  // renderTrendingNewsList()
+  renderTrendingNewsList();
 
   // Renders top country and world data UI
   renderData();
