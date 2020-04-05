@@ -4,7 +4,7 @@ import NewsElement from "./components/NewsElement.mjs";
 import SearchHistory from "./components/SearchHistory.mjs";
 import CountrySearchElement from "./components/CountrySearchInput.mjs";
 import TopCountryListElement from "./components/TopCountryList.mjs";
-import WorldDataElement from "./components/WorldDataElement.mjs";
+import WorldDataElement from "./components/WorldData.mjs";
 
 // Start the app logic
 $(init);
@@ -31,27 +31,9 @@ function renderData() {
 }
 
 function renderWorldData() {
-  getWorldData()
-    .then(function (totals) {
-      $("#totalCasesWorld")
-        .text(totals.confirmed)
-        .append(
-          $("<span>")
-            .addClass("stat-span-small text-red uk-margin-small-left")
-            .text(totals.newConfirmed === "" ? "" : "+" + totals.newConfirmed)
-        );
-      $("#totalRecoveredWorld").text(totals.recovered);
-      $("#totalDeathsWorld")
-        .text(totals.deaths)
-        .append(
-          $("<span>")
-            .addClass("stat-span-small text-red uk-margin-small-left")
-            .text(totals.newDeaths === "" ? "" : "+" + totals.newDeaths)
-        );
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
+  getWorldData().then((totals) => {
+    WorldDataElement(totals);
+  });
 }
 
 function renderTopCountryList() {
