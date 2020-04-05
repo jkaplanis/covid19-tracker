@@ -10,6 +10,9 @@ import WorldDataElement from "./components/WorldData.mjs";
 $(init);
 
 function init() {
+  // Render trending news articles
+  // renderTrendingNewsList()
+
   // Renders top country and world data UI
   renderData();
 
@@ -29,15 +32,15 @@ function renderData() {
 }
 
 function renderWorldData() {
-  getWorldData().then((totals) => {
-    WorldDataElement(totals);
-  });
+  getWorldData()
+    .then((totals) => WorldDataElement(totals))
+    .catch((err) => console.log("Error getting world data. ", err));
 }
 
 function renderTopCountryList() {
-  getTopCountryData(10).then((data) => {
-    TopCountryListElement(data);
-  });
+  getTopCountryData(10)
+    .then((data) => TopCountryListElement(data))
+    .catch((err) => console.log("Error fetching top country data", err));
 }
 
 function renderTrendingNewsList() {
