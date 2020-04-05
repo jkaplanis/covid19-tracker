@@ -3,23 +3,29 @@ import { getTopCountryData, getWorldData } from "./logic/covid-api-calls.mjs";
 import {
   countrySearchByDisplay,
   countrySearchByName,
-  countries
+  countries,
 } from "./data/countries.mjs";
 import NewsElement from "./components/NewsElement.mjs";
 import SearchHistory from "./components/SearchHistory.mjs";
 import CountrySearchElement from "./components/CountrySearchInput.mjs";
+import TopCountryListElement from "./components/TopCountryList.mjs";
 
 // Start the app logic
 $(init);
 
 function init() {
+  // Renders top country and world data UI
   renderData();
+
   setInterval(renderData, 600000);
-  renderTrendingNewsList();
+
+  // Render trending news
+  // renderTrendingNewsList();
 
   // Build the country search input
   CountrySearchElement();
 
+  // Build Search History
   SearchHistory();
 }
 
@@ -53,40 +59,8 @@ function renderWorldData() {
 }
 
 function renderTopCountryList() {
-  getTopCountryData(10).then(function (countries) {
-    let table = $("#countryDataTable");
-    let countryRows = $("#countryRows").empty();
-
-    table.css("border-collapse", "seperate");
-    table.css("border-spacing", "0 10px");
-
-    table.css("margin", "auto");
-
-    countries.forEach(function (country) {
-      let rowEl = $("<tr>");
-
-      rowEl.append($("<td>")).css("text-align", "right").text(country.cases);
-
-      let nameCell = $("<td>")
-        .css("text-align", "center")
-        .css("padding", "0px 30px");
-
-      let countryLinkEl = $("<a>")
-        .attr("href", `./country.html?country=${country.country_name}`)
-        .addClass("text-white")
-        .text(countrySearchByName(country.country_name).display);
-
-      nameCell.append(countryLinkEl);
-      rowEl.append(nameCell);
-
-      rowEl.append(
-        $("<td>")
-          .text(country.deaths)
-          .css("text-align", "left")
-          .addClass("text-red")
-      );
-      countryRows.append(rowEl);
-    });
+  getTopCountryData(10).then((data) => {
+    TopCountryListElement(data);
   });
 }
 
