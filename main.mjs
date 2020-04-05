@@ -4,6 +4,7 @@ import NewsElement from "./components/NewsElement.mjs";
 import SearchHistory from "./components/SearchHistory.mjs";
 import CountrySearchElement from "./components/CountrySearchInput.mjs";
 import TopCountryListElement from "./components/TopCountryList.mjs";
+import WorldDataElement from "./components/WorldDataElement.mjs";
 
 // Start the app logic
 $(init);
