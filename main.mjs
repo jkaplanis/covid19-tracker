@@ -1,8 +1,8 @@
 import { getTrendingNews } from "./logic/newsAPI.mjs";
 import { getTopCountryData, getWorldData } from "./logic/covid-api-calls.mjs";
 import NewsElement from "./components/NewsElement.mjs";
-import SearchHistory from "./components/SearchHistory.mjs";
-import CountrySearchElement from "./components/CountrySearchInput.mjs";
+import renderSearchHistory from "./components/SearchHistory.mjs";
+import renderCountrySearchElement from "./components/CountrySearchInput.mjs";
 import TopCountryListElement from "./components/TopCountryList.mjs";
 import WorldDataElement from "./components/WorldData.mjs";
 import Graph from "./components/Graph.mjs";
@@ -31,10 +31,10 @@ function init() {
   renderData();
 
   // Render the search history in the menu
-  SearchHistory();
+  renderSearchHistory();
 
   // Render the search element
-  CountrySearchElement();
+  renderCountrySearchElement();
 
   // Every 10 mins re-fetch and build top country and world data
   setInterval(renderData, 600000);
