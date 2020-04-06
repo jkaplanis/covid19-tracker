@@ -17,7 +17,7 @@ let maxDeathValue = 0;
 // On window resize rebuild the D3.js chart
 $(window).resize(function () {
   sectionWidth = $("#bar-chart-container").width();
-  buildGraph(sectionWidth);
+  renderGraph(sectionWidth);
 });
 
 function init() {
