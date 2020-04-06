@@ -13,6 +13,7 @@ $(init);
 // Global section width used for D3.js
 let sectionWidth = $("#bar-chart-container").width();
 let maxDeathValue = 0;
+let lastUpdated = 0;
 
 // On window resize rebuild the D3.js chart
 $(window).resize(function () {
@@ -22,7 +23,7 @@ $(window).resize(function () {
 
 function init() {
   // Render trending news articles
-  renderTrendingNewsList();
+  // renderTrendingNewsList();
 
   // Initial chart build
   renderGraph(sectionWidth);
@@ -36,13 +37,22 @@ function init() {
   // Render the search element
   renderCountrySearchElement();
 
+  setInterval(() => updateTimeSinceUpdate(), 1000);
+
   // Every 10 mins re-fetch and build top country and world data
   setInterval(renderData, 600000);
 }
 
 function renderData() {
+  lastUpdated = Date.now();
+  updateTimeSinceUpdate();
   renderWorldData();
   renderTopCountryList();
+}
+
+function updateTimeSinceUpdate() {
+  let since = moment(lastUpdated).fromNow();
+  $("#updatedLast").text(since);
 }
 
 function renderWorldData() {
