@@ -1,12 +1,22 @@
-// d3.select() // first matching dom element
-// d3.selectAll() // all elements matching the criteria
-
 export default function buildGraphEl(
   sectionWidth = 600,
-  dataSet = [],
-  maxValue
+  data = []
+  // maxValue
 ) {
-  console.log(maxValue);
+  const dataSet = [];
+  let maxValue = 0;
+
+  data.forEach((country) => {
+    let deaths = removeCommas(country.deaths);
+    maxValue = deaths > maxValue ? deaths : maxValue;
+
+    dataSet.push([country.country_name, deaths]);
+  });
+
+  dataSet.sort((a, b) => {
+    return b[1] - a[1];
+  });
+
   let x = d3.scaleLinear().domain([0, maxValue]).range([0, sectionWidth]);
 
   let y = d3
@@ -67,4 +77,11 @@ function buildXAxisLabel(maxValue, sectionWidth) {
     .append("g")
     .attr("transform", "translate(0,10)") // This controls the vertical position of the Axis
     .call(d3.axisBottom(xscale));
+}
+
+function removeCommas(str) {
+  while (str.search(",") >= 0) {
+    str = (str + "").replace(",", "");
+  }
+  return parseInt(str);
 }

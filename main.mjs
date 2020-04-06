@@ -20,35 +20,9 @@ $(window).resize(function () {
   buildGraph(sectionWidth);
 });
 
-function removeCommas(str) {
-  while (str.search(",") >= 0) {
-    str = (str + "").replace(",", "");
-  }
-  return parseInt(str);
-}
-
-function buildGraph(sectionWidth) {
-  let dataArray = [];
-
-  getTopCountryData(10).then((data) => {
-    data.forEach((country) => {
-      let deaths = removeCommas(country.deaths);
-      maxDeathValue = deaths > maxDeathValue ? deaths : maxDeathValue;
-
-      dataArray.push([country.country_name, deaths]);
-    });
-
-    dataArray.sort((a, b) => {
-      return b[1] - a[1];
-    });
-
-    $(".bar-chart").html(Graph(sectionWidth, dataArray, maxDeathValue));
-  });
-}
-
 function init() {
   // Render trending news articles
-  // renderTrendingNewsList();
+  renderTrendingNewsList();
 
   // Initial chart build
   buildGraph(sectionWidth);
@@ -92,4 +66,10 @@ function renderTrendingNewsList() {
     .catch(function (error) {
       console.log(error);
     });
+}
+
+function buildGraph(sectionWidth) {
+  getTopCountryData(10).then((dataArray) => {
+    $(".bar-chart").html(Graph(sectionWidth, dataArray, maxDeathValue));
+  });
 }
