@@ -23,7 +23,7 @@ $(window).resize(function () {
 
 function init() {
   // Render trending news articles
-  // renderTrendingNewsList();
+  renderTrendingNewsList();
 
   // Initial chart build
   renderGraph(sectionWidth);
