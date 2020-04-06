@@ -25,7 +25,7 @@ function init() {
   renderTrendingNewsList();
 
   // Initial chart build
-  buildGraph(sectionWidth);
+  renderGraph(sectionWidth);
 
   // Renders top country and world data UI
   renderData();
@@ -68,7 +68,7 @@ function renderTrendingNewsList() {
     });
 }
 
-function buildGraph(sectionWidth) {
+function renderGraph(sectionWidth) {
   getTopCountryData(10).then((dataArray) => {
     $(".bar-chart").html(Graph(sectionWidth, dataArray, maxDeathValue));
   });

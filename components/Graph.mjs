@@ -1,8 +1,4 @@
-export default function buildGraphEl(
-  sectionWidth = 600,
-  data = []
-  // maxValue
-) {
+export default function buildGraphEl(sectionWidth = 600, data = []) {
   const dataSet = [];
   let maxValue = 0;
 
