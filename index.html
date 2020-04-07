@@ -61,6 +61,7 @@
         id="searchInputWrapper"
       ></div>
 
+      <!-- WORLD DATA -->
       <section
         id="worldData"
         class="card uk-box-shadow-large uk-flex-column uk-text-center uk-padding-small uk-margin"
@@ -85,7 +86,9 @@
             </p>
           </div>
         </div>
+        <div class="updated-last">Updated: <span id="updatedLast"></span></div>
       </section>
+      <!-- TOP TEN COUNTRY -->
       <section
         class="card uk-flex-column uk-box-shadow-larges uk-padding-small uk-margin text-white"
       >
@@ -117,6 +120,19 @@
           <tbody id="countryRows"></tbody>
         </table>
       </section>
+
+      <!-- Graph -->
+      <!-- FUTURE IMPLEMENTATION OF GRAPH -->
+      <!-- <section
+        class="card uk-flex-column uk-box-shadow-larges uk-padding-small uk-margin text-white"
+        id="bar-chart-container"
+      >
+        <div class="uk-text-center">
+          <h3 class="uk-text-center text-white">Deaths</h3>
+          <div class="bar-chart"></div>
+          <div id="res"></div>
+        </div>
+      </section> -->
       <!-- Trending world news -->
       <section
         class="card uk-flex-column uk-box-shadow-larges uk-padding-small uk-margin text-white"
@@ -145,6 +161,9 @@
       src="https://kit.fontawesome.com/029529849f.js"
       crossorigin="anonymous"
     ></script>
+
+    <!-- D3.js CDN -->
+    <script src="https://d3js.org/d3.v5.min.js"></script>
 
     <script
       src="https://code.jquery.com/jquery-3.4.1.min.js"
