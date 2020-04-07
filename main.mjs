@@ -10,23 +10,25 @@ import Graph from "./components/Graph.mjs";
 // Start the app logic
 $(init);
 
+// FUTURE IMPLEMENTATION OF GRAPH
 // Global section width used for D3.js
-let sectionWidth = $("#bar-chart-container").width();
-let maxDeathValue = 0;
+// let sectionWidth = $("#bar-chart-container").width();
+
 let lastUpdated = 0;
 
+// FUTURE IMPLEMENTATION OF GRAPH
 // On window resize rebuild the D3.js chart
-$(window).resize(function () {
-  sectionWidth = $("#bar-chart-container").width();
-  renderGraph(sectionWidth);
-});
+// $(window).resize(function () {
+//   sectionWidth = $("#bar-chart-container").width();
+//   renderGraph(sectionWidth);
+// });
 
 function init() {
   // Render trending news articles
   renderTrendingNewsList();
 
-  // Initial chart build
-  renderGraph(sectionWidth);
+  // FUTURE IMPLEMENTATION OF GRAPH
+  // renderGraph(sectionWidth);
 
   // Renders top country and world data UI
   renderData();
@@ -80,6 +82,6 @@ function renderTrendingNewsList() {
 
 function renderGraph(sectionWidth) {
   getTopCountryData(10).then((dataArray) => {
-    $(".bar-chart").html(Graph(sectionWidth, dataArray, maxDeathValue));
+    $(".bar-chart").html(Graph(sectionWidth, dataArray, 0));
   });
 }
